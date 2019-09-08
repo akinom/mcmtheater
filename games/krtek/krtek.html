@@ -1,0 +1,31 @@
+<html> 
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+qs_path = "../.."; 
+qs_doc_start('Games', 'Krtek');
+qs_doc_headline("Help Krtek Catch The Color Blocks");
+qs_body_start(true);
+
+html();
+
+var applet = new Applet("Krtek", "game.krtek.Play.class", "./krtek.jar", 
+                        500, 500); 
+applet.addParam("TRACE", "1"); 
+
+wd(qs_colored_table_start(3, undefined, 3) + "<TR><TD>");
+wd (applet.getHtmlString()); 
+wd("</TD></TR>" + qs_table_finish()); 
+html(); 
+</SCRIPT> 
+<p> 
+Move Krtek with your Mouse (hold left buttom down). 
+</p> 
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_doc_finish("Aug 2006");
+html(); 
+</SCRIPT>
+</html> 

@@ -1,0 +1,119 @@
+<HTML>
+<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./basics.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+basics_width = 210;
+basics_start('Multiple Actors', 'Periodically Starting A Clone'); 
+basics_debug = "false";
+basics_stp = 3;
+html(); 
+
+
+</SCRIPT>
+<p>
+The previous two examples showed how to start actors 
+<a href=multiple.html>once</a> as well 
+as 
+<a href=multiplePeriodically.html>periodically.</a> 
+In this example we show an actor that creates a clone of itself and schedules it to start at a future point in time on the stage.
+</p> 
+
+
+<!-- FOLLOWERS --------------------------------------------------------------->
+<p>
+The Actor below calls itself a <code>MultipleFollower</code> Actor. 
+It dresses up as ant in its first statement using the image file 
+<a href=simpleShapes/res/ant.jpg>simpleShapes/res/ant.jpg</a>.
+The second statement makes sure that it does not leave a movement trail.
+The <code>while</code> loop at the end of its 
+<code>act</code> method 
+moves the actor straight across the stage until it reaches the stage's edge. 
+The remaining statements 
+create a new  <code>MultipleFollower</code> actor,
+force the newly created actor to jump to the position that the creating actor is at,
+set its direction to be the same as the creating actor's, 
+and schedule the newly created actor to start 10 clock ticks in the future.
+</p>
+<p>
+The first 
+<code>MultipleFollower</code> actor is started as the initial actor by the mcmTheater package such that it is positioned at the center of the stage and is directed to the right. The follower created by the initial
+<code>MultipleFollower</code> actor therefore jumps to the center of the stage  and heads to the right as well. When this second actor starts its 
+<code>act</code>
+method 10 clock ticks after the initial actor, it creates a third 
+<code>MultipleFollower</code> which jumps to the center of the stage and heads to the right.
+It starts 10 clock ticks after the second actor and 20 clock ticks after the initial actor.
+This chain of actors goes on for ever with new followers starting every 10 clock ticks at the center of the stage and heading to the right just as the initial 
+<code>MultipleFollower</code> did.
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+basics_long_lesson_finish('MultipleFollower', basics_width, 
+'public void act() {\n' +
+'   setShape(new ImageShape(\n' + 
+'                   "simpleShapes/res/ant.jpg"));\n' + 
+'   setTrailVisible(false);\n' + 
+'\n' + 
+'   MultipleFollower follower; \n' + 
+'   // create clone\n' +  
+'   follower = new MultipleFollower();\n' +
+'\n' + 
+'   // position follower at this actor\'s position\n' + 
+'   follower.jumpTo(getPos());\n' +
+'\n' + 
+'   // assign this actor\'s ditection to follower\n' + 
+'   follower.setDirection(getDirection());\n' +
+'\n' + 
+'   // start follower in 10 clock ticks\n' +
+'   follower.start(getStage(), 10);\n' +
+'	\n' +
+'   // move until reaching the stage\'s edge\n' + 
+'   while (getStage().isInside(getPos())) {\n' +
+'      move(getStepSize());\n' +
+'   }\n' +
+'}');
+                           
+</SCRIPT>
+<!-- FOLLOWERS DONE --->
+
+<p>
+The Actor below starts three 
+<code>MultipleFollower</code> actors each at a different position.
+All three generate a chain of ants that follow their creators. 
+The second actor created is positioned in the middle of the stage's right edge and its direction is set so it heads to the left. Thus all followers created in this chain start at the right and head to the left as well. 
+</p>
+<SCRIPT LANGUAGE="JavaScript">
+basics_long_lesson_finish('MultipleFollowersGen', basics_width, 
+'public void act() {\n' + 
+'Actor a; \n' + 
+'\n' + 
+'a = new MultipleFollower();\n' + 
+'a.jumpTo(0, 18); \n' + 
+'a.start(getStage()); \n' + 
+'\n' + 
+'a = new MultipleFollower();\n' + 
+'a.jumpTo(getStage().getWidth()-1,\n' + 
+'         getStage().getCenter().y); \n' + 
+'a.setDirection(180);\n' + 
+'a.start(getStage(), 37); \n' + 
+'\n' + 
+'a = new MultipleFollower();\n' + 
+'a.jumpTo(0, getStage().getCenter().x + 25); \n' + 
+'a.start(getStage(), 11); \n' + 
+'}');
+                           
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+basics_finish('Sep 2005');
+html();
+</SCRIPT> 
+
+</HTML>
+

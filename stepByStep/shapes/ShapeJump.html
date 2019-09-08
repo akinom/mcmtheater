@@ -1,0 +1,62 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Triangles Jumping About The Stage', 'ShapeJump');
+</SCRIPT>
+
+<p> 
+To design a visually pleasing mcmTheater program a programmer must take care that the stage changes not just in a small region. 
+Jumping actors like the ones on this page do just that. 
+The first actor below randomly jumps around the stage drawing triangles. 
+The second actor jumps randomly around the stage as well but it rotates each triangle a little to the right. 
+</p> 
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+list_height = 160;
+local_applet('ShapeJumpRandom',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      jumpTo(Dice.throwPoint(getStage()));\n' + 
+'      shape(25);\n' + 
+'   }\n' + 
+'}');
+html();
+</SCRIPT>
+</p>
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('ShapeJumpRotate',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      jumpTo(Dice.throwPoint(getStage()));\n' + 
+'      right(30);\n' + 
+'      shape(25);\n' + 
+'   }\n' + 
+'}');
+html(); 
+</SCRIPT>
+</p>
+<p> 
+The second actor on this stage draws a more interesting pattern than the first 
+but its stage does become cluttered and untidy after a while. 
+The actors on the next stage improve this situation.
+</P>
+
+<SCRIPT LANGUAGE="JavaScript">
+local_next();
+html();
+
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

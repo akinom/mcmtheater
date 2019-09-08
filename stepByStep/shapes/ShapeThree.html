@@ -1,0 +1,110 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Add Color', 'ShapeThree');
+</SCRIPT>
+
+<p>
+This page starts with the last actor from the previous page and gradually modifies it to use color. 
+The second actor chooses a random color for its trail and shape before drawing each set of three triangles.
+The triangle drawing and rotation statements are now collected in the body of the new <code>threeShapes</code> method.
+The third actor calls <code>threeShapes</code> four times to draw a full 'circle' of triangles after each color change.  
+</p><p>
+The fourth actor goes wild.
+In its first statements it sets its step size really big, which makes it very fast.
+It chooses to leave a trail 2 pixels wide and to be invisible, that is not to show a shape.
+Like the third actor it picks a random trail color before drawing a full round of triangles.
+TheAfter drawing the traingles it takes a break for 10 time ticks on the stage's clock so the finished pattern can be admired during that break. 
+It finally clears the stage with its current trail color before starting over by drawing its pattern in a new color.
+<p> 
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('ShapeRotateSize3',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      shape(90); right(30);\n' + 
+'      shape(60); right(30);\n' + 
+'      shape(40); right(30);\n' + 
+'   }\n' + 
+'}');
+html();
+</SCRIPT>
+</p>
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('Shape3PackColor',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      setTrailColor(Dice.throwColor())\n' + 
+'      getShape().setColor(getTrailColor())\n' + 
+'      threeShapes()\n' + 
+'   }\n' + 
+'}'  +
+'\n'  +
+'public void threeShapes() {\n'  + 
+'   shape(90); right(30);\n' + 
+'   shape(60); right(30);\n' + 
+'   shape(40); right(30);\n' + 
+'}');
+html(); 
+</SCRIPT>
+</p>
+
+
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('Shape3PackRound',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      setTrailColor(Dice.throwColor())\n' + 
+'      getShape().setColor(getTrailColor())\n' + 
+'      threeShapes();\n' + 
+'      threeShapes();\n' + 
+'      threeShapes();\n' + 
+'      threeShapes();\n' + 
+'   }\n' + 
+'}');
+html(); 
+</SCRIPT>
+</p>
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+applet_height = applet_height + 30;
+local_applet('Shape3PackFinal',
+'public void act() {\n' + 
+'   setStepSize(100);\n' + 
+'   setTrailWidth(2);\n' + 
+'   setVisible(false);\n' + 
+'   while (true) {\n' + 
+'      setTrailColor(Dice.throwColor())\n' + 
+'      threeShapes();\n' + 
+'      threeShapes();\n' + 
+'      threeShapes();\n' + 
+'      threeShapes();\n' + 
+'      sleep(10);\n' + 
+'      getStage().setColor(getTrailColor());\n' + 
+'   }\n' + 
+'}');html(); 
+</SCRIPT>
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+local_next(); 
+
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

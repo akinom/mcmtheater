@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  - xscreensaver-style configuration file for mcm.benny
+  -->
+<screensaver name="mcmTheater Screensaver Example" _label="mcmTheater screensaver example">
+
+  <command arg="-root"/>
+    
+  <command arg="-class mcm.theater.ScreenSaver"/>
+
+  <command arg="-jar ZigZagStar.jar"/>
+
+  <file id="jdkhome" _label="Java Home (blank=auto)" arg="-jdkhome %" />   
+  
+  <select id="ACTOR">
+   	<option id="ACTOR" _label="Default Actor" arg-set="-actor mcmUser.startup.ZigZagStar"/>  	
+   </select>
+   
+   <!-- option sets background color of stage/screen -->
+   <select id="BG">
+	<option id="BG" _label="default" />  	
+        <option id="BG" _label="offwhite" arg-set="-bg #f3f3f3"/>  	
+        <option id="BG" _label="lightblue" arg-set="-bg #b4c4f3"/>  	
+   		<option id="BG" _label="green" arg-set="-bg #60856b"/>  	
+   </select> 
+
+   <!-- option sets the amount of tracing done, default NONE -->
+   <select id="TRACE">
+   	<option id="TRACE" _label="No Tracing"/>  	
+   	<option id="TRACE" _label="Some Tracing" arg-set="-TRACE 2"/>  	
+   	<option id="TRACE" _label="Lots Tracing" arg-set="-TRACE 10"/>  	
+   </select>
+
+   <!-- options sets where traces are send to if tracing is done -->
+   <select id="TRACEFILE">
+	<option id="TRACEFILE" _label="stderr" />
+	<option id="TRACEFILE" _label="ZigZagStar.txt" arg-set="-TRACEFILE ZigZagStar.txt"/>  	
+   </select>
+   
+  <_description>
+  xml descrbing mcm.startup.ZigZagStar screensaver options
+  </_description>
+
+</screensaver>

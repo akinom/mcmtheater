@@ -1,0 +1,66 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/anim.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+local_start('Exponential Reproduction of Actors', 'Exponential Growth');
+html();
+</SCRIPT>
+
+<p>
+The animation below starts with two 
+<SCRIPT LANGUAGE="JavaScript">
+wd(local_java_ref('exponential.Generator', 'Generator', 'plain'));
+html(); 
+</SCRIPT> 
+actors. 
+Each alternates between moving forward and creating two copies of itself and starting them off to the left and right. Each of these copies alternate between moving and then creating two copies of themselves, which move and create more copies ...
+It does not take long for a lot of Generators to appear on the stage. 
+Note how the animation quickly slows down as the number of Generators explodes.
+</p> 
+<p> The initial actor  (see 
+<SCRIPT LANGUAGE="JavaScript">
+wd(local_java_ref('exponential.Starter'));
+html(); 
+</SCRIPT> 
+) watches the number of actors on stage and if it gets too big, defined as more than 164, it terminates all Generators, sleeps for a short 
+while and then starts a new pair of 
+<code>Generators</code>. 
+</p> 
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+var expo = anim_src('gallery/exponential', 'Starter', 623);
+
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+wd(expo.html);
+wd(local_java_ref('exponential.Starter'));
+wd('<BR>'); 
+wd(local_java_ref('exponential.Generator', 'Generator'));
+wd("</TD></TR>");
+wd(qs_table_finish()); 
+
+html();
+do_anim(expo.name, 'gallery/exponential/Starter', 0, 99, 150, 450); 
+</SCRIPT>
+</p>
+
+<p>
+The animation above is actually not produced by an applet executing the mcmTheater program.
+It simply displays a series of images.
+Running this program could seriously slow your computer since it starts close to 80 threads. 
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

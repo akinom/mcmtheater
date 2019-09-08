@@ -1,0 +1,104 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('An Actor That Jumps All Over The Stage', 'single');
+</SCRIPT>
+
+<p> 
+The actors on this page  alternate forever between jumping to a random position on the stage and performing a simple task. 
+The first actor's task is to show 
+itself at its position for a short time,
+the second actor draws a square, 
+the third moves to the stage's edge,
+the fourth grows the size of its shape from a given minimum to a specified maximum.
+</p>
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_table_start(0)); 
+applet_height = 110;
+wd("<TR><TD>"); 
+local_applet('Jump',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'       jumpTo(Dice.throwPoint(getStage()));\n' + 
+'       sleep(delay); \n'  + 
+'}',
+'Jump and Show Shape'); 
+wd("</TD></TR>"); 
+local_row_spacer(); 
+wd("<TR><TD>"); 
+applet_height = applet_width;
+local_applet('JumpSquare',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      jumpTo(Dice.throwPoint(getStage()));\n' + 
+'      square();\n' + 
+'   }\n' + 
+'}\n' + 
+'   	\n' + 
+'public void square() {\n' + 
+'   for (int i = 0; i < 4; i++) {\n' + 
+'      move(size);\n' + 
+'      right(90);\n' + 
+'   }\n' + 
+'}\n', 
+'Jump and Draw Square'); 
+wd("</TD></TR>"); 
+local_row_spacer(); 
+wd("<TR><TD>"); 
+local_applet('JumpAcross',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      jumpTo(Dice.throwPoint(getStage()));\n' + 
+'      line();\n' + 
+'   }\n' + 
+'}\n' + 
+'    \n' + 
+'public void line() {\n' + 
+'   while (getStage().isInside(getPos())) {\n' + 
+'      move(getStepSize());\n' + 
+'   }  \n' + 
+'}',
+'Jump and Move to Stage\'s Edge');
+wd("</TD></TR>"); 
+local_row_spacer(); 
+wd("<TR><TD>"); 
+local_applet('JumpGrowShape',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      jumpTo(Dice.throwPoint(getStage()));\n' + 
+'      growShape();\n' + 
+'   }\n' + 
+'}\n' + 
+'public void growShape() {\n' + 
+'   for (int i = 5; i < size; i++) {\n' + 
+'      getShape().setWidth(i);\n' + 
+'      getShape().setHeight(i);\n' + 
+'      sleep(1);\n' + 
+'   }\n' + 
+'}\n', 
+'Jump and Grow Shape'); 
+wd("</TD></TR>");
+wd(qs_table_finish());
+html();
+</SCRIPT>
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+wd("<p> To learn how to start more than one jumping actor click on "); 
+local_next('next step.', 'noPara'); 
+wd("</p>"); 
+
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>
+

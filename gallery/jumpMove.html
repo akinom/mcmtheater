@@ -1,0 +1,44 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/anim.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+local_start('Back And Forth', 'Pulsing Circle');
+html();
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+var expo = anim_src('gallery/jumpMove', 'Starter', 623);
+
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+wd(expo.html);
+wd(local_java_ref('RedBlueJumpMoveCircle'));
+wd('<BR>'); 
+wd(local_java_ref('BackAndForth', 'BackAndForth'));
+wd("</TD></TR>");
+wd(qs_table_finish()); 
+
+html();
+do_anim(expo.name, 'gallery/jumpMove/Starter', 0, 54, 100, 0); 
+</SCRIPT>
+</p>
+
+<p>
+The animation above is actually not produced by an applet executing the mcmTheater program.
+It simply displays a series of images.
+Running this program could slow your computer since it starts 22 threads. 
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

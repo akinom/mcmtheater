@@ -1,0 +1,50 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Transforming a Square Drawing Actor', 'index');
+list_height = 200;
+list_width = 200;
+</SCRIPT>
+
+<p>
+These pages explain how to modify a simple square drawing 
+<code>Actor</code> so that it changes into one that draws a 
+series of squares that form an attractive pattern.
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+local_indent(); 
+local_applet_plain('Square'); 
+local_ref('Square', 'Square.html'); 
+local_unindent(); 
+wd("</TD><TD>"); 
+local_indent(); 
+local_applet_plain('For'); 
+local_ref('For', 'Size4Turn180.html'); 
+local_unindent();
+wd("</TD><TD>"); 
+local_indent(); 
+local_applet_plain('Image'); 
+local_ref('Image', 'Image.html'); 
+local_unindent(); 
+wd("</TD></TR>");
+wd(qs_table_finish()); 
+html();
+
+local_next('See Step By Step Explanation'); 
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

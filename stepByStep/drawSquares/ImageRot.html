@@ -1,0 +1,44 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_debug = "false";
+local_start('Use A Hand To Represent The Actor', 'Image'); 
+applet_height = 200;
+</SCRIPT>
+
+<p>
+This actor uses a hand image as its shape. Unfortunately it does not turn image rotation off so that the hand is displayed parallel to the actors movement direction. <A href=Image.html>Steady Hand</a> shows the same acor with image rotation turned off. 
+
+</p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('ImageRot',
+'public void act() {\n' + 
+'   Shape shape;\n' + 
+'   shape = new ImageShape("drawSquares/res/hand.png");\n' + 
+'   shape.setHotSpotPoint(new Point(8, 0));\n' + 
+'   setShape(shape); \n' + 
+'   \n' + 
+'   while (true) {\n' + 
+'      for (double len = 10; len <= 80; len = len + 10) {\n' +
+'         setTrailColor(Dice.throwColor());\n' +
+'         square(len); right(180);\n' +
+'      }\n' +
+'   }\n' +
+'}', false // no restart because of image usage 
+);
+html();
+
+local_next(); 
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

@@ -1,0 +1,40 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./sy.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+sy_start('Starting Two Rectangles WIth A Bigger Offset', 'Start2');
+</SCRIPT>
+
+<p>
+Sy did not like the spacing between the <code>Rectangles</code>. 
+He experimented with different positions and decided to place them 
+at position (60, 40) and (120, 100). 
+</p><p>
+
+<SCRIPT LANGUAGE="JavaScript">
+sy_applet('Start2'); 
+sy_code(
+'Actor a;\n' + 
+'\n' + 
+'a = new Rectangle();\n' + 
+'a.jumpTo(60, 40);        // position at (60, 40)\n' + 
+'a.start(getStage());\n' + 
+'\n' + 
+'a = new Rectangle();\n' + 
+'a.jumpTo(120, 100);      // position at (120, 100)\n' + 
+'a.start(getStage());'
+);
+
+wd("</p>"); 
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

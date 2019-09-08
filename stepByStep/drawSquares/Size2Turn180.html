@@ -1,0 +1,33 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Draw Two Different Squares', 'Size2Turn180');
+</SCRIPT>
+
+<p>
+The <code>Actor</code>
+now alternates between drawing a square with 50 and a square with 80 pixels side length. It still turns 180 degrees between drawing squares.
+</p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('Size2Turn180',
+'public void act() {\n' + 
+'   setTrailColor(Dice.throwColor());\n' +
+'   square(50); right(180);\n' + 
+'   square(80); right(180);\n' + 
+'}');
+html();
+
+local_next(); 
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

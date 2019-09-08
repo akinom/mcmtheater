@@ -1,0 +1,42 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+local_start('Marching Blocks', 'Marching Blocks');
+html();
+</SCRIPT>
+
+<p>
+The initial actor below starts three MarchingLines actors with shapes that are 
+a quarter of the stage wide and a third of the stage high.
+MarchingLines actors move forward a given distance, start a clone of themselves, positioning it at its own starting position and then proceed moving until they fall of the stage's edge.
+Clones have the same properties as their creators except for their shape color, which is either slightly modified from their creator's color (9 out of 10 cases on average) or a randomly chosen color (1 out of 10 cases). 
+</p> 
+<p> 
+To see MarchingLines zooming along at break neck speed click 
+<a href=marchingFast.html>Light Speed</a>.
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+local_applet_plain('MarchingLinesStarter', 
+                    new Array(new Array("STP", 5 ) ));
+wd(local_java_ref('MarchingLinesStarter'));
+wd('<BR>'); 
+wd(local_java_ref('MarchingLines', 'MarchingLines'));
+wd("</TD></TR>");
+wd(qs_table_finish()); 
+html();
+</SCRIPT> 
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

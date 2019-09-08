@@ -1,0 +1,174 @@
+<HTML>
+<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./basics.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+basics_width = 210;
+basics_start('Multiple Actors', 'Periodically Starting New Actors'); 
+basics_debug = "false";
+basics_stp = 3;
+html(); 
+
+
+</SCRIPT>
+
+<p>
+The <a href=multiple.html>previous example</a> showed an initial actor that 
+created four new actors that once they started executing their 
+<code>act</code> method would never finish. 
+An initial actor that creates and starts actors that eventually finish their 
+<code>act</code> method must periodically create new actors to avoiod that the 
+<code>Stage</code> eventually becomes empty and devoid of 
+<code>Actors</code> producing change.
+The examples below show such initial actors.
+</p> 
+
+<p>
+For an initial actor that periodically creates copies of itself to follow 
+see the <a href=multipleFollowers.html>next example page</a>.
+</P>
+
+<SCRIPT LANGUAGE="JavaScript">
+basics_long_lesson_start("Periodically Start a New Square");
+</SCRIPT>
+<p>
+The initial 
+<code>Actor</code>
+in this example stays around forever periodically creating 
+<SCRIPT LANGUAGE="JavaScript">
+wd(java_src_ref("simpleShapes/Square.java", "Square"));
+html();
+</SCRIPT>
+actors. 
+The mcmTheater package positions the initial actor at the center of the stage and leaves its other properties like shape color, the direction, step size ... at its default values.
+The initial actor's first action in its <code>act</code> method is to choose the color BLUE for its shape. 
+The main part of its <code>act</code> method consists of an indefinite repetition of the statements inside the <code>while</code> loop: 
+<p>
+<OL> 
+<LI>create a new 
+<SCRIPT LANGUAGE="JavaScript">
+wd(java_src_ref("simpleShapes/Square.java", "Square"));
+html();
+</SCRIPT>
+actor, </LI>
+<LI>force it to jump to a randomly chosen position on the stage,</LI>
+<LI>assign a randomly chosen trail color,</LI>
+<LI>make its trail 9 pixels wide, </LI>
+<LI>sleep for 30 clock ticks before starting over. </LI>
+</OL>
+</p>
+
+<p>
+Since a 
+<SCRIPT LANGUAGE="JavaScript">
+wd(java_src_ref("simpleShapes/Square.java", "Square"));
+html();
+</SCRIPT>
+actor takes longer than 30 clock ticks to complete drawing its square there are always multiple of them 'acting' simultaneously on the stage.
+A programmer must be careful not to write an actor that generates other actors so fast that the stage becomes crowded. 
+</p> 
+<p>
+Note in the source code below  the use of "<code>square.</code>" in front of the calls to 
+<code>jumpTo, setTrailColor, setTrailWidth, </code> and <code>start.</code> 
+It means that the method should be applied to the new 
+<SCRIPT LANGUAGE="JavaScript">
+wd(java_src_ref("simpleShapes/Square.java", "Square"));
+html();
+</SCRIPT>
+actor, making it jump, change trail color and width, and start as opposed to the initial actor doing so. 
+</p>
+<SCRIPT LANGUAGE="JavaScript">
+basics_long_lesson_finish( 'MultipleRandomPD', 180,
+                'public void act() {\n' + 
+                '   getShape().setColor(Color.BLUE);\n' +
+		'   while (true) {\n' + 
+		'      Square square = new Square();\n' + 
+		'      square.jumpTo(Dice.throwPoint(getStage()));\n' + 
+		'      square.setTrailColor(Dice.throwColor());\n' + 
+		'      square.setTrailWidth(9);\n' + 
+		'      square.start(getStage());\n' + 
+ 		'      sleep(15);\n' + 
+		'   }\n' +
+		'}', 'Restart');
+</SCRIPT>
+<!-- SQUARES DONE -->
+
+<!-- CENTER SHOOTER --------------------------------------------------------------->
+<SCRIPT LANGUAGE="JavaScript">
+basics_long_lesson_start("Repeatedly Shoot A Dashed Line Out Of The Center"); 
+</SCRIPT>
+<p>
+The initial actor here, as in the previous example, periodically creates and starts new actors.
+It is done in an orderly planned fashion though. Each new 
+<SCRIPT LANGUAGE="JavaScript">
+wd(java_src_ref("simpleShapes/MoveDashed.java", "MoveDashed"));
+html();
+</SCRIPT>
+actor created starts in the center and is turned 15 degrees to the left from the previously created line drawing actor.
+</p>
+<p> This initial actor sets the
+<code>Stage mode</code> to
+<code>LEAVE</code> in its first statement. 
+Actors that try to move to positions outside the visible 
+<code>Stage</code> area allowed to do so as opposed to being caught at the
+<code>Stage's</code> borders.
+The initial actor makes its own shape <code>BLUE</code> in the second statement. 
+The main part of its <code>act</code> method again consists of an indefinite repetition of the statements inside the <code>while</code> loop: 
+<OL> 
+<LI> turn 15 degrees to the left, </LI>
+<LI> create a new 
+<SCRIPT LANGUAGE="JavaScript">
+wd(java_src_ref("simpleShapes/MoveDashed.java", "MoveDashed"));
+html();
+</SCRIPT>
+actor, </LI>
+<LI> retrieve <B>own</B> direction angle, </LI>
+<LI> tell the newly created actor to use this as its direction as well, </LI>
+<LI> tell the new actor to jump to the <code>Stage's</code> center, </LI>
+<LI> start the newly created actor, </LI>
+<LI> sleep for 30 clock ticks before starting over.</LI>
+</OL> 
+</p>
+
+<p>
+Note in the source code below the use of "<code>dasher.</code>" in front of the calls to jumpTo, setDirection,  and start. It means that the method should be applied to the new
+<SCRIPT LANGUAGE="JavaScript">
+wd(java_src_ref("simpleShapes/MoveDashed.java", "MoveDashed"));
+html();
+</SCRIPT>
+actor, making it jump, set its direction, and start as opposed to the initial actor doing so.
+
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+basics_long_lesson_finish('MultipleRotate', 200, 
+'public void act() {\n' + 
+'   getStage().setMode(Stage.LEAVE);\n' + 
+'   getShape().setColor(Color.BLUE);\n' + 
+'   while (true) {\n' + 
+'      left(15);	\n' + 
+'      MoveDashed dasher = new MoveDashed();\n' + 
+'      double myAngle = getDirection();\n' + 
+'      dasher.setDirection(myAngle);\n' + 
+'      dasher.jumpTo(getStage().getCenter());\n' + 
+'      dasher.start(getStage());\n' + 
+'      sleep(15);\n' + 
+'   }\n' + 
+'}', 'Restart');
+</SCRIPT>
+
+<!-- CENTER SHOOTER --------------------------------------------------------------->
+
+<SCRIPT LANGUAGE="JavaScript">
+basics_finish('Sep 2005');
+html();
+</SCRIPT> 
+
+</HTML>
+

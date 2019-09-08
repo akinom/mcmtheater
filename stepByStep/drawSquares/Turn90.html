@@ -1,0 +1,52 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Turn Between Drawing Squares', 'Turn90');
+</SCRIPT>
+
+<p>
+Now the 
+<code>Actor</code> turns 90 degrees to the right after it finishes drawing each square. Thus squares drawn are rotated by 90 degrees. Once the 
+<code>Actor</code> drew
+four squares it starts overpainting previously drawn squares.
+</p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('Turn90',
+'public void act() {\n' + 
+'   while (true) {\n' +
+'      setTrailColor(Dice.throwColor());\n' +
+'      square(80);\n' + 
+'      right(90);\n' + 
+'   }\n' +
+'}');
+html();
+
+wd("<p> ");
+wd("If consecutue squares are to be rotated 180 degrees we simply need to replace the turn statement:"); 
+local_replace("right(90);", "by", "right(180);"); 
+wd("</p>"); 
+html();
+
+local_applet('Turn180',
+'public void act() {\n' + 
+'   while (true) {\n' +
+'      setTrailColor(Dice.throwColor());\n' +
+'      square(80);\n' + 
+'      right(180);\n' + 
+'   }\n' +
+'}');
+
+local_next(); 
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

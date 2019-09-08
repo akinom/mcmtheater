@@ -1,0 +1,90 @@
+<HTML>
+<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./basics.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "..";
+basics_start('Turning', 'Turning between Moves'); 
+html(); 
+</SCRIPT>
+
+<p>
+When actors move they do so in their current movement direction. Calling an actor's 
+<code>left</code> or <code>right</code> method giving an angle in degrees forces an actor to turn. The size of the turn is defined by the degrees given.
+</p>
+
+<p>
+The applets below show how calling an actor's 
+<code>left</code> and 
+<code>right</code> methods effects its movement. 
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_applet_info()); 
+html();
+</SCRIPT>
+Note that the 
+<code>Actors</code> below execute in 
+<code>debug mode</code> with the consequence that 
+<code>left</code> and 
+<code>right</code> turns are performed incrementally and thus consume time.
+In non 
+<code>debug mode</code> turns are performed inistantaneously.
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_table_start(0));
+basics_horiz_lesson('Turn0a', 90, 
+                     'move(40);\n' + 
+                     'left(30);\n' + 
+		     'move(40);', 
+       		     'Turn 30 degrees to the Left', 'Restart');
+basics_horiz_lesson('Turn0b', 90, 
+                     'move(40);\n' + 
+                     'right(30);\n' + 
+		     'move(40);', 
+       		     'Turn 30 degrees to the Right', 'Restart');
+basics_horiz_lesson( 'Turn1',  90, 
+			'move(35);\n' + 
+			'left(90);\n' + 
+			'move(20);\n' + 
+			'right(90);\n' + 
+			'move(35);',
+			'90 degrees left;&nbsp;90 degrees right', 'Restart'); 
+basics_horiz_lesson( 'Turn2',  90, 
+			'right(180);   move(35);\n' + 
+			'              left(90);\n' + 
+			'              move(20);\n' + 
+			'              right(90);\n' + 
+			'              move(35);',
+    'Same as above EXCEPT: 180 degree U-Turn first', 'Restart');
+basics_horiz_lesson( 'Turn3',  90, 
+		   	'move(30);  // move forward\n' + 
+			'left(180); // make a U-turn\n' + 
+			'move(30);  // move to start position\n' + 
+			'right(180);// make another U-turn \n',
+			'Move back and forth covering a 30 pixel distance.'
+		  , 'Restart');
+basics_horiz_lesson( 'Turn4',  120, 
+			'while (true) {\n' +
+		   	'   move(30);  // move forward\n' + 
+			'   left(180); // make a U-turn\n' + 
+			'   move(30);  // move to start position\n' + 
+			'   right(180);// make another U-turn \n' +
+                        '   left(135); // left 135 degrees\n' + 
+			'}',
+   'Same as above EXCEPT: Move back and forth forever adding a 135 degree left turn inbetween', 'Restart');
+wd(qs_table_finish());
+
+html();
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+basics_finish('Aug 2005');
+html();
+</SCRIPT> 
+
+</HTML>

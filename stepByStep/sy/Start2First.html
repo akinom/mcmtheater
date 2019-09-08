@@ -1,0 +1,34 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./sy.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+sy_start('An Actor that Starts Two Rectangles', 'Start2First');
+</SCRIPT>
+<p> 
+Sy simply needed to create <code>Rectangle</code> actors instead of <code>ShowShape</code> actors. He was happy to see that it was rather simple.
+</p> 
+<SCRIPT LANGUAGE="JavaScript">
+sy_applet(); 
+sy_code(
+'Actor a;\n' + 
+'\n' + 
+'a = new Rectangle();  // create a Rectangle actor instead of ShowShape\n' + 
+'a.jumpTo(10, 20);\n' + 
+'a.start(getStage());\n' + 
+'\n' + 
+'a = new Rectangle();  // create a Rectangle actor instead of ShowShape\n' + 
+'a.jumpTo(30, 40);\n' + 
+'a.start(getStage());'
+);
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

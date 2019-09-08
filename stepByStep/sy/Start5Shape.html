@@ -1,0 +1,84 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./sy.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+sy_start('Use a Prettier Shape', 'Start5Shape');
+</SCRIPT>
+
+
+<p>
+Shapes are used to define the way an actor is painted on the stage. 
+The actors in the previous steps used the default shape a circle with a line drawn inside that points in the actor's current movement direction. 
+</p>
+<SCRIPT LANGUAGE="JavaScript">
+wd("<p>"); 
+wd("Sy decided that he wanted to use a blue circle as the shape for all actors. ");
+wd("The lines"); 
+wd("</p><p>"); 
+wd(qs_indent(100)); 
+qs_code('Shape shape = new EllipseShape(15, 15);\n' + 
+        'shape.setTrailColor(Color.BLUE);'); 
+wd(qs_unindent(100)); 
+wd("</p><p>"); 
+wd("create a circle shape and set its color to </cide>BLUE</code>. "); 
+wd("<code> Start5Shape</code> uses "); 
+wd("</p><p>"); 
+wd(qs_indent(100)); 
+qs_code('<code>a.setShape(shape);</code>');
+wd(qs_unindent(100)); 
+wd("</p><p>"); 
+wd("to assign this shape to each actor it creates."); 
+wd("</p> "); 
+
+sy_applet(); 
+sy_code(
+'   Actor a;\n' +
+'   \n' +
+'   a = new Rectangle();\n' +
+'   a.setShape(shape);\n' + 
+'   a.setTrailWidth(3); \n' +
+'   a.setTrailColor(Dice.throwColor());\n' +
+'   a.jumpTo(60, 40);\n' +
+'   a.start(getStage());\n' +
+'   \n' +
+'   a = new Rectangle();\n' +
+'   a.setShape(shape);\n' + 
+'   a.setTrailWidth(3); \n' +
+'   a.setTrailColor(Dice.throwColor());\n' +
+'   a.jumpTo(120, 100);\n' +
+'   a.start(getStage());\n' +
+'   \n' +
+'   a = new Rectangle();\n' +
+'   a.setShape(shape);\n' + 
+'   a.setTrailWidth(3); \n' +
+'   a.setTrailColor(Dice.throwColor());\n' +
+'   a.jumpTo(180, 160);\n' +
+'   a.start(getStage());\n' +
+'   \n' +
+'   a = new Rectangle();\n' +
+'   a.setShape(shape);\n' + 
+'   a.setTrailWidth(3); \n' +
+'   a.setTrailColor(Dice.throwColor());\n' +
+'   a.jumpTo(240, 220);\n' +
+'   a.start(getStage());\n' +
+'   \n' +
+'   a = new Rectangle();\n' +
+'   a.setShape(shape);\n' + 
+'   a.setTrailWidth(3); \n' +
+'   a.setTrailColor(Dice.throwColor());\n' +
+'   a.jumpTo(300, 280);\n' +
+'   a.start(getStage());'
+);
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>
+

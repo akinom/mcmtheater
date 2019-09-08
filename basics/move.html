@@ -1,0 +1,61 @@
+<HTML>
+<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./basics.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+//basics_width = 200; 
+basics_start('Moving', 'Simple Moves'); 
+html(); 
+</SCRIPT>
+<p> 
+Actors are programmed to move about the stage. By default they leave a trail along their movement path. Actors are shown as circles containing a line pointing
+in their current movement direction. The move method instructs an actor to move a given number of pixels in its current direction. 
+To learn about changing an actor's movement diirection see 
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_ref_menu_item("Turning.", "MCM Basics", "Turning")); 
+html();
+</SCRIPT>
+To learn about changing an actor's movement speed see 
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_ref_menu_item("Speed.", "MCM Basics", "Speed")); 
+html();
+</SCRIPT>
+</p>
+<p>
+The applets below show the effects of various calls to an actor's 
+<code>move</code> method. 
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_applet_info()); 
+wd("</p>");
+html();
+
+wd(qs_table_start(0));
+basics_horiz_lesson('Move30', 60, 
+		'move(30)', 
+		'Move 30 Pixels Forward', 
+		"Restart"); 
+basics_horiz_lesson('Move80', 60, 
+		'move(80)', 
+		'Move 80 Pixels Forward', 
+		"Restart"); 
+basics_horiz_lesson('MoveM30', 60, 
+		'move(-30)', 
+		'Move 30 Pixels Backward', 
+		"Restart"); 
+basics_horiz_lesson('MoveBF', 60, 
+                'move(30);\nmove(-80);\nmove(50);',
+		'Three Moves', 
+		"Restart"); 
+wd(qs_table_finish()); 
+
+basics_finish('Aug 2005');
+html();
+</SCRIPT> 
+
+</HTML>

@@ -1,0 +1,70 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('From A Simple Shape To A Complex Shape Combination', 'index');
+</SCRIPT>
+
+<p>
+The pages in this section explain how an actor that knows how to draw a triangle can be modified to generate sophisticated combinations of triangles to make attractive patterns. 
+The ideas in these pages are easily applied to other shapes. 
+As soon as an actor has 'learned' to move along a pretty path it can use any of the ideas in these pages to form more sophisticated patterns. 
+</p> 
+
+<SCRIPT LANGUAGE="JavaScript">
+applet_width = (qs_body_width - 5 * qs_spacer_dist) /4; 
+applet_height = applet_width; 
+
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+local_indent(); 
+local_applet_plain('ShapeForever'); 
+local_ref("One Triangle", "ShapeOnce.html"); 
+local_unindent(); 
+wd("</TD><TD>"); 
+local_indent(); 
+local_applet_plain('Shape3PackFinal'); 
+local_ref("Rotated Triangles", "ShapeRotations.html");
+local_unindent(); 
+wd("</TD><TD>"); 
+local_indent(); 
+local_applet_plain('ShapeCtrLineMCG'); 
+local_ref("Sliding Triangles", "ShapeLine.html");
+local_unindent(); 
+wd("</TD><TD>"); 
+local_indent(); 
+local_applet_plain('ListShapeMoveCleanRGB'); 
+local_ref("Triangles All Over", "ShapeJump.html"); 
+local_unindent(); 
+wd("</TD></TR>");
+wd(qs_table_finish()); 
+html();
+</SCRIPT>
+
+<p>
+The applet to the left shows a simple triangle drawing actor which serves as the starting point for the more sophisticated actors in the other examples.
+</p><p>
+The second applet shows an actor that draws a sequence of triangles of different sizes rotated about a center. As a whole they look like a pin wheel pattern. The actor changes its trail color and the stage's background color before starting with a new pin wheel pattern. 
+</p><p>
+The third applet contains three actors simultaneously  drawing lines of triangles in three different colors. Whenever a line reaches the stage's edge it starts over at a randomly chosen position.
+</p><p>
+The applet on the right is the most complicated example. It shows three actors simultaneously moving about the stage drawing red, green, or blue triangles. 
+Their movement is semi random.
+After completing each triangle at one of the triangle's corners,  they randomly decide at which of the two other corners to continue.
+</p> 
+
+
+<SCRIPT LANGUAGE="JavaScript">
+local_next('See Step By Step Explanation'); 
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

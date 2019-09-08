@@ -1,0 +1,74 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('A Red, Green, and Blue Triangle Snake', 'ListShapeMoveClean');
+</SCRIPT>
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+wd("The initial actor below starts three copies of the ");
+wd( local_java_ref('ShapeCleanMoveInside', 'ShapeCleanMoveInside')); 
+wd(' actor which is the second actor described on the '); 
+local_prev("previous page.", 'NoParagraph'); 
+html(); 
+</SCRIPT>
+</p> 
+
+<p>
+<code>makeMover</code> creates a new <code>ShapeCleanMoveInside</code> actor and assigns a reference to this new actor to the variable <code>mover</code>.
+It sets the new actor's trail width to 2 pixels, 
+its position to the stage's center, 
+its shape to a new filled <code>EllipseShape</code> shape with a 9 pixel diameter, 
+its shape's color and its trail color to the color value given when 
+the <code>makeMover</code> method is called.  
+<code>makeMover</code> starts the new actor in its last statement.  
+Note the use of <code>mover.</code> in <code>makeMover</code>'s statements. 
+This prefix is necessary to make explicit that the new <code>mover</code>'s trail width, shape, ... is to be changed not the initial actor's trail width, shape, ... 
+</p> 
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+list_height = 300;
+local_applet('ListShapeMoveCleanRGB',
+'public void act() {\n' + 
+'   setVisible(false); \n' + 
+'   makeJumper(Color.RED);\t' + 
+'   sleep(10); \n' + 
+'   makeJumper(Color.GREEN);\t' + 
+'   sleep(10); \n' + 
+'   makeJumper(Color.BLUE);\t' + 
+'   sleep(10); \n' + 
+'}\n' + 
+'   	\n' + 
+'public void makeJumper(Color color) \n' + 
+'   {\n' + 
+'   Actor mover; \n' + 
+'   mover = new ShapeCleanMoveInside(); \n' + 
+'   mover.setTrailWidth(2);\n' + 
+'   mover.jumpTo(getStage().getCenter());\n' + 
+'   mover.setShape(new EllipseShape(9, 9, true));\n' + 
+'   mover.getShape().setColor(color);\n' + 
+'   mover.setTrailColor(color);\n' + 
+'   mover.start(getStage());\n' + 
+'}'); 
+
+html();
+</SCRIPT>
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+local_next();
+html();
+
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

@@ -1,0 +1,67 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_debug = "false";
+local_start('Draw Many Squares', 'ForExtend10_80');
+</SCRIPT>
+
+<p>
+It is easy to change the previous <code>Actor</code>
+to draw squares with sizes 20, 30, 40, 50, 60, and 70; simply replace:
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+local_replace("len <= 50;", "in the for loop by", "len <= 80;");
+html();
+</SCRIPT>
+<p> 
+Note that the actors below execute faster than the ones in the previous steps. They are no more run in <code>debug</code> mode and perform their turns instantly instead of incrementally.
+</p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('ForExtend10_80',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      setTrailColor(Dice.throwColor());\n' +
+'      \n' +
+'      for (double len = 20; len <= 80; len = len + 10) {\n' +
+'         square(len); right(180);\n' +
+'      }\n' +
+'   }\n' +
+'}'
+);
+html();
+
+</SCRIPT>
+<p>
+It is almost as easy to change the <code>Actor</code>
+to draw squares with sizes 3, 8, 13, 18, 23, ...,73, 78: 
+</p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('ForExtendLots',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      setTrailColor(Dice.throwColor());\n' +
+'   \n' +
+'      for (double len = 3; len <= 83; len = len + 5) {\n' +
+'         square(len); right(180);\n' +
+'      }\n' +
+'   }\n' +
+'}'
+);
+
+html();
+
+local_next(); 
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

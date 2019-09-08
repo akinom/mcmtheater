@@ -1,0 +1,43 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+local_start('Marching Blocks', 'Marching Blocks');
+html();
+</SCRIPT>
+
+<p>
+These MarchingLines move as fast as they can.
+The applet below is set up so that all Actor's default step size equals 1000.
+Since the MarchingLines below call the
+<code>move</code> 
+method with the width of their shapes, which obviously is smaller than 1000, they perform every move in a single time step.
+</p> 
+<p>
+To see a slow version, click on
+<a href=marching.html>Slow Down Please</a>.
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+local_applet_plain('MarchingLinesStarter', 
+                    new Array(new Array("STP", 1000 ) ));
+wd(local_java_ref('MarchingLinesStarter'));
+wd('<BR>'); 
+wd(local_java_ref('MarchingLines', 'MarchingLines'));
+wd("</TD></TR>");
+wd(qs_table_finish()); 
+html();
+</SCRIPT> 
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

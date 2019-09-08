@@ -1,0 +1,40 @@
+<HTML>
+<HEAD>
+<TITLE>
+MCM Theater README 
+</TITLE>
+</HEAD>
+<BODY>
+<H1> MCM Theater README  </H1> 
+<P>
+These directories contain example Actors that use the mcmTheater package,
+see <a href=http://www.mcmprogramming.com/mcmtheater>mcmTheater</a>.
+The software is distributed free of charge for non commercial users, see 
+<a href=COPYING>COPYING</a>. 
+</P> 
+
+<B> DrJava Development Tool </B>  <BR> 
+<P> 
+To learn how to develop actors with DrJava, see  <a href=README_DrJava.html>README_DrJava.html</a>. 
+</P>  
+
+<B> Compile and Run from the command line </B>  <BR> 
+<P> 
+To compile the two distributed packages, use:
+<pre>
+javac -cp mcmTheater-saverbeans-api.jar mcmUser 
+javac -cp mcmTheater-saverbeans-api.jar theaterEx 
+</pre>
+To execute and actor from the commmand line use: 
+<pre>
+java -cp .:mcmTheater-saverbeans-api.jar mcm.theater.Play -actor &lt;ACTORNAME&gt;
+</pre>
+where actor name is the fully qualified name of a mcm.theater.Actor.
+For example, to run the actor defined in mcmUser/startup/ZigZagStar.java do: 
+<pre>
+java -cp .:mcmTheater-saverbeans-api.jar mcm.theater.Play -actor mcmUser.startup.ZigZagStar
+</pre>
+</P> 
+
+</BODY>
+</HTML>

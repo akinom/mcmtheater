@@ -1,0 +1,75 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Draw a Triangle', 'ShapeOnce');
+</SCRIPT>
+
+<p>
+The actor in the applet below moves along the edges of a triangle with an edge length of 40 pixels. 
+It moves 40 pixels between turns and makes a total of three turns whose angles add up to 360 degree.
+Thus the actor points back to its original direction when it is done.
+</p>
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+local_debug = "true";
+local_applet('ShapeOnce',
+'public void act() {\n' + 
+'   move(40);\n' +
+'   right(120);\n' +
+'   move(40);\n' +
+'   right(120);\n' +
+'   move(40);\n' +
+'   right(120);\n' +
+'}'
+);
+html();
+</SCRIPT>
+</p>
+
+<p>
+This second actor draws the same triangle as the one above but does so forever.
+Note that after drawing one triangle the actor ends at the 
+<b>same position pointed in the same direction </b>as before calling its triangle drawing 
+<code>shape</code> method. Thus calling 
+its <code>shape</code> repeatedly causes the actor to travel the same triangular path again and again and again ...
+</p> 
+<p>
+The actor's program is a modification of the first actor. The new  
+<code>shape</code> method contains the same statements as the previous actor's
+<code>act</code> method. 
+This actor's <code>act</code> method simply calls the triangle drawing <code>shape</code> method within its <code>while (true)</code> loop, which is Java speak for "Do it Forever."
+</p>
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('ShapeForever',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      shape();\n' + 
+'   }\n' + 
+'}\n' + 
+'\n' + 
+'public void shape() {\n' + 
+'   move(40);\n' +
+'   right(120);\n' +
+'   // and so forth ...\n' + 
+'   // same as in act method above\n' + 
+'}');
+wd("</p> ");
+html();
+
+local_next(); 
+
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

@@ -1,0 +1,141 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Draw Four Different Squares', 'Size4Turn180');
+</SCRIPT>
+
+<p>
+The <code>Actor</code>
+now alternates between drawing a square with 50, 60, 70, and 80 pixels side length. It still turns 180 degrees between drawing squares.
+</p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('Size4Turn180',
+'public void act() {\n' + 
+'   setTrailColor(Dice.throwColor());\n' +
+'   square(50); right(180);\n' + 
+'   square(60); right(180);\n' + 
+'   square(70); right(180);\n' + 
+'   square(80); right(180);\n' + 
+'}');
+html();
+</SCRIPT>
+<p>
+The following code snippets show several other ways to achieve the same
+behaviour. The last snippet, which uses a <code>for</code> loop, 
+is the code furher improvements are based on.
+</p> 
+<SCRIPT LANGUAGE="JavaScript">
+wd("<p> The first change introduces a variable, called <code>len</code>, which holds the side lengths of the squares to be drawn: </p>");
+local_applet('SizeVar',
+'public void act() {\n' + 
+'   double len;\n' + 
+'   while (true) {\n' + 
+'      setTrailColor(Dice.throwColor()); \n' + 
+'      len = 50; square(len); right(180);\n' + 
+'      len = 60; square(len); right(180);\n' + 
+'      len = 70; square(len); right(180);\n' + 
+'      len = 80; square(len); right(180);\n' + 
+'   }\n' + 
+'}'
+);
+
+wd("<p> " + 
+"The second change explicitly assigns <code>50</code> to  " +
+"<code>len</code> for the first  " +
+"<code>square</code>, but then adds 10 to the current value of  " +
+"<code>len</code> and makes that the new value:" + 
+"<p> ");
+local_applet('SizeAdd',
+'public void act() {\n' + 
+'   double len;\n' + 
+'   while (true) {\n' + 
+'      setTrailColor(Dice.throwColor()); \n' + 
+'      len = 50; square(len); right(180);\n' + 
+'      len = len + 10; square(len); right(180);\n' + 
+'      len = len + 10; square(len); right(180);\n' + 
+'      len = len + 10; square(len); right(180);\n' + 
+'   }\n' + 
+'}'
+);
+
+wd("<p> " + 
+"The advantage of the above changes is that changing the \n" +
+"<code>Actor</code> to draw squares with side length 20, 30, 40, and 50 becomes \n" +
+"a matter of changing the \n" +
+"<code>50</code> in the first assignment to \n" +
+"<code>len</code> to the number \n" +
+"<code>20</code>: \n"); 
+wd("</p> ");
+
+local_applet('SizeAddFrom20',
+'public void act() {\n' + 
+'   double len;\n' + 
+'   while (true) {\n' + 
+'      setTrailColor(Dice.throwColor()); \n' + 
+'      len = 20; square(len); right(180);\n' + 
+'      len = len + 10; square(len); right(180);\n' + 
+'      len = len + 10; square(len); right(180);\n' + 
+'      len = len + 10; square(len); right(180);\n' + 
+'   }\n' + 
+'}'
+);
+html();
+</SCRIPT>
+
+<p> 
+In the last change we formulate a 
+<code>for</code> loop. The loop executes the statements inside its 
+curly braces ({}) several times. 
+<code>len</code> receives the value 
+<code>20</code> 
+before the statements inside are executed for the first time, see 
+<code>for(double len = 20; ...</code>.
+After each execution of the statements inside the loop 
+<code>len</code> is incremented by 
+<code>10</code>, see 
+<code>for(...; len = len + 10)</code>. 
+The loop finishes execution once the variable 
+<code>len</code> is no more smaller or equal to 
+<code>50</code>. 
+</p><p>
+Thus the statements inside the loop are executed with 
+<code>len</code> containing a value of <code>20</code> in the first 'round', 
+<code>30</code> in the second, 
+<code>40</code> in the third,
+and <code>50</code> in the fourth. After the fourth execution of the 
+loop's statements <code>len</code> receives a 
+value of 
+<code>60</code> and since 
+<code>60</code> is no more smaller or equal to 
+<code>50</code> the loops finishes.
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('For',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'   setTrailColor(Dice.throwColor());\n' +
+'   \n' +
+'   for (double len = 20; len <= 50; len = len + 10) {\n' +
+'      square(len); right(180);\n' +
+'   }\n' +
+'}'
+);
+
+wd("<p> This last version is only slightly shorter than the first version and more difficult to understand. In the next step the power of the for loop will become obvious when we extend its so called range. "); 
+wd("</p> ");
+
+local_next(); 
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

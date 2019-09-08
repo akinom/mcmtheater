@@ -1,0 +1,87 @@
+<HTML>
+<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./basics.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+basics_width = 210;
+basics_start('Multiple Actors', 'Running Multiple Actors Simultaneously'); 
+basics_debug = "false";
+basics_stp = 3;
+html(); 
+
+
+</SCRIPT>
+
+<p>
+So far most examples showed only one <code>Actor</code> executing on the <code>Stage.</code>
+The mcmTheater package starts all programs off by creating an initial actor, that it sends on the 
+<code>Stage</code>, where it starts to execute its 
+<code>act()</code> method.
+The initial actor may create and start other actors which may in turn produce 
+even more actors that all execute simultaneously. 
+</p> 
+
+<p> 
+The initial actor in the first example creates and starts four actors that 
+execute indefinitely.  The performace will therefore go on forever. 
+
+The initial actor must take care to periodically start new actors when it 
+creates and starts actors that eventually finish. 
+<a href=multiplePeriodically.html>Periodically Starting New Actors</a>
+or 
+<a href=multipleFollowers.html>Creating Clones</a>
+gives such an example. 
+</p>
+
+<!-- THE JUMPY ACTORS ---------------------------------------------------------->
+<SCRIPT LANGUAGE="JavaScript">
+basics_long_lesson_start("Three Jumpy Actors and One Changing the Stage Color");
+</SCRIPT>
+<p>
+Three <code>TimeJump</code> actors randomly jump around the stage and another invisible actor changes the stage's color periodically. 
+<SCRIPT LANGUAGE="JavaScript">
+wd("The "); 
+wd(java_src_ref("simpleShapes/TimeJump5.java", "TimeJump5") + ", "); 
+wd(java_src_ref("simpleShapes/TimeJump20.java", "TimeJump20"));
+wd(", and ");
+wd(java_src_ref("simpleShapes/TimeStageColor.java", "TimeStageColor"));
+wd(" actors are the ones that are described on the ");
+wd(qs_ref_menu_item("Time", "MCM Basics", "Time")); 
+wd("page.");
+html();
+</SCRIPT>
+Since the initial actor finishes its 
+<code>act</code> method after creating these actors, which is done without consuming any time, it disappears from the <code>Stage</code> before the <code>Stage</code> gets a chance to show it even once.
+This poses no problem  because the actors created will continue to 
+<code>act</code> indefinitely providing the viewer with an ever changing  situation on the stage.
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+basics_long_lesson_finish( 'MultipleTimeJump', basics_width,
+                    'public void act() {\n' + 
+                    '   Actor a;\n' + 
+                    '   a = new TimeJump20();\n' + 
+                    '   a.start(getStage());\n' + 
+                    '   a = new TimeJump20();\n' + 
+                    '   a.start(getStage());\n' + 
+                    '   a = new TimeJump5();\n' + 
+                    '   a.start(getStage());\n' + 
+                    '   a = new TimeStageColor();\n' + 
+		    '   a.start(getStage());\n' + 
+		    '}');
+</SCRIPT>
+<!-- THE JUMPY ACTORS FINISH -->
+
+<SCRIPT LANGUAGE="JavaScript">
+basics_finish('Sep 2005');
+html();
+</SCRIPT> 
+
+</HTML>
+

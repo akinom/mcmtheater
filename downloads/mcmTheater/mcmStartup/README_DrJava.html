@@ -1,0 +1,71 @@
+<HTML> 
+<HEAD> 
+<TITLE> 
+MCM Theater  Startup Kit 
+</TITLE>
+</HEAD> 
+<BODY> 
+
+<h4>COPYRIGHT ... </h4>
+<P>
+This startup kit is part of the MCM Theater  package which is freely available for non commercial use at <A href=http://www.mcmprogramming.com/mcmtheater>http://www.mcmprogramming.com/mcmtheater</a>. All materials are copyrighted by 
+<A href=mailto:momeven@gmail.com>Monika Mevenkamp</a>.
+</p> 
+<p> 
+For more info on this Startup Kit see <A href=README.html>README</a>.
+</p>
+
+<HR WIDTH=100%> 
+<h4>How To Compile and Run with DrJava ... </h4>
+<A href=http://drjava.sourceforge.net/>DrJava</a> was developed expressly for teaching purposes at Rice University in Houston, TX. 
+It is a small, yet powerful Java programming environment, and does not
+distract the beginning user with a host of features.
+This startup kit contains a copy DrJava and two DrJava project files. 
+Do not move DrJava or the project files to other locations. DrJava uses its own location to determine where to search for Java files. 
+project 
+<HR WIDTH=100%> 
+<H4>ZigZagStar.pjt </H4> 
+<P> 
+The ZigZagStar.pjt project contains only one Java actor: mcmUser.startup.ZigZagStar. 
+To open the project start the DrJava executable. 
+</P><P>
+From the <B>Project</B> menu choose <B>Open Project</B> and open the <B>ZigZagStar.pjt</B> file. 
+You should see the <B>mcmUser</B> folder/package listed under <B>[Source Files]</B>, under <B>mcmUser</B> you should see the <B>startup</B> package, and under 
+<B>startup</B> the Java file <B>ZigZagStar.java</B>. 
+Clicking on it opens the Java file, <B>mcmUser\startup\ZigZagStar.java</B>; it contains a simple mcmTheater actor. 
+</P><P>
+To compile choose <B>Compile Project</B> from the <B>Project</B> menu. 
+You can execute the actor after successful compilation, which is announced by a message in the <B>Compiler Output</B> pane. 
+</P><P>
+To execute enter the following command in the <B>Interactions</B> pane at the bottom: 
+<B><pre> java mcm.theater.Play -actor mcmUser.startup.ZigZagStar
+</pre> </B>
+A new window pops up and you should see a <B>ZigZagStar</B> actor executing.
+</P>
+
+<HR WIDTH=100%> 
+<H4> theaterEx.pjt </H4> 
+<P>
+The folder/package <B>theaterEx</B> contains the examples from the 
+<A href=http://www.mcmprogramming.com/mcmtheater/stepByStep>setpByStep</a> section on the <A href=http://www.mcmprogramming.com/mcmtheater>mcmtheater</a> website. 
+</P>
+<P>
+From the <B>Project</B> menu choose <B>Open Project</B> and open the <B>theaterEx.pjt</B> file. 
+You should see the <B>theaterEx</B> folder/package listed under <B>[Source Files]</B> and several subpackages under <B>theaterEx</B> which in turn contain many example Actors.
+To view any of the Java source files, simply click on them. 
+</P><P>
+To compile choose <B>Compile Project</B> from the <B>Project</B> menu. 
+</P><P>
+To execute any of the example actors pass the examples actors fully quailified name as actor parameter to the <B>mcm.theater.Play</B> class: 
+<B><pre> java mcm.theater.Play -actor NAME-OF-ACTOR
+</pre></B>
+To start for example the <B>FourGreenYellow</B> actor from the <B>theaterEx.bouncer</B> package use: 
+<B><pre>  java mcm.theater.Play -actor theaterEx.bouncer.FourGreenYellow  </pre></B>
+</P>
+
+<HR WIDTH=100%> 
+&nbsp; <BR>
+<small>Last Updated: Aug 2007</small>
+</BODY>
+</HTML>
+

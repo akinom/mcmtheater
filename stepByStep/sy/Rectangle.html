@@ -1,0 +1,38 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./sy.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+sy_start('Draw the same Rectangle Again and Again and Again ...', 'Rectangle');
+</SCRIPT>
+
+<p>
+The next obvious improvement was to 'teach' the actor to draw the rectangle over and over again. 
+This lead to adding a <code>while (true)</code> loop. Sy had 
+had no trouble understanding the concept of the loop when told about it. 
+</p>
+<SCRIPT LANGUAGE="JavaScript">
+sy_applet();
+
+sy_code(
+'while (true) {  // do the statements inside { ... } forever\n' + 
+'   move(250);\n' + 
+'   left(90);\n' + 
+'   move(60);\n' + 
+'   left(90);\n' + 
+'   move(250);\n' + 
+'   left(90);\n' + 
+'   move(60);\n' + 
+'   left(90);\n' + 
+'}');
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Copyright (c) 2005 Monika Mevenkamp 
+-->
+
+<!--
+  - Main build file 
+  - 
+  - Modified from SaverBeans SDK Startup Kit
+  - http://jdic.dev.java.net/
+  -->
+
+<project basedir="." default="all" name="Main Build">
+        <target name="all" depends="screensaver" />
+
+        <target name="define" description="Define custom tasks">
+                 <taskdef name="foreachscreensaver" 
+                        classname="org.jdesktop.jdic.screensaver.autogen.ForEachScreensaver"
+                        classpath="${saverbeans.path}/saverbeans-ant.jar" />
+        </target>
+
+        <target name="init">
+                <property file="build.properties" />
+                <property name="src" value="." />
+                <property name="doc" value="doc" />
+                <property name="build" value="build" />
+                <property name="dist" value="dist" />
+                <property name="conf" value="conf" />
+
+ 		<fail unless="project">
+                        Property project not found. 
+                </fail>
+
+                <fail unless="saverbeans.path">
+                        Property saverbeans.path not found. 
+                </fail>
+                <available file="${saverbeans.path}/saverbeans-ant.jar" 
+                            property="saverbeansant.present" />
+                <fail unless="saverbeansant.present">
+                        The file ${saverbeans.path}/saverbeans-ant.jar is invalid.  
+                </fail>
+
+                <fail unless="mcmTheater.jar">
+                        Property mcmTheater.jar not found. 
+                </fail>
+                <available file="${mcmTheater.jar}" property="mcmTheater.present" />
+                <fail unless="mcmTheater.present">
+			The file ${mcmTheater.jar} is invalid.  
+        	</fail>
+        </target>
+
+        <target name="properties" depends="init, define" />
+
+        <target name="compile" depends="properties" description="Compile package">
+                <echo message="generate class files in ${build}" />
+                <mkdir dir="${build}" />
+                <javac debug="off" source="1.4" destdir="${build}" 
+                        srcdir="${src}" sourcepath="" classpath="${mcmTheater.jar}">
+			<include name="mcmUser/**"/>
+                </javac>
+        </target>
+
+        <target name="jar" depends="compile" description="combined class files">
+                <echo message="generate ${build}/${project}.jar" />
+                <jar destfile="${build}/${project}.jar" duplicate="fail">
+                        <fileset dir="${build}/">
+                                <include name="**/*.class" />
+                        </fileset>
+                </jar>
+        </target>
+
+        <!-- Create screensavers -->
+        <target name="screensaver" depends="screensaver-win32, screensaver-unix">
+        </target>
+
+        <target name="screensaver-win32" depends="jar">
+                <echo message="generate ${build}/win32/*.scr files" /> 
+                <mkdir dir="${build}/win32" />
+                <foreachscreensaver confDir="${src}/conf" outDir="${build}/win32" os="win32" />
+
+                <!-- Collect *.scr, ${project}.jar and mcmTheater.jar ${dist}/win32: -->
+                <echo message="collect files in ${dist}/win32" /> 
+                <copy todir="${dist}/win32">
+                        <fileset dir="${build}">
+                                <include name="${project}.jar" />
+                        </fileset>
+                        <fileset dir="${build}/win32">
+                                <include name="*" />
+                        </fileset>
+                        <fileset dir="${doc}/win32">
+                                <include name="README.txt" /> 
+                        </fileset>
+                        <fileset dir="${basedir}">
+                                <include name="COPYING" />
+                        </fileset>
+                </copy>
+                <copy tofile="${dist}/win32/saverbeans-api.jar" file="${mcmTheater.jar}" />
+                <echo message="generate ${dist}/win32.zip" /> 
+                <zip destfile="${dist}/win32.zip" basedir="${dist}/win32" includes="**" />
+        </target>
+
+        <target name="screensaver-unix" depends="jar">
+                <echo message="generate ${build}/unix/*.scr files" /> 
+                <mkdir dir="${build}/unix" />
+                <foreachscreensaver confDir="${src}/conf" outDir="${build}/unix" os="unix" />
+
+                <!-- Collect *.scr, ${project}.jar and mcmTheater.jar ${dist}/win32: -->
+                <echo message="collect files in ${dist}/unix" /> 
+                <copy todir="${dist}/unix">
+                        <fileset dir="${build}">
+                                <include name="${project}.jar" />
+                        </fileset>
+                        <fileset dir="${src}/conf">
+                            <include name="*.xml" />
+                        </fileset>
+                        <fileset dir="${build}/unix" />
+                        <fileset dir="${doc}/unix">
+                                <include name="README.txt" /> 
+                        </fileset>
+                        <fileset dir="${basedir}">
+                                <include name="COPYING" />
+                        </fileset>
+                </copy>
+                <copy tofile="${dist}/unix/saverbeans-api.jar" file="${mcmTheater.jar}" />
+                <echo message="generate ${dist}/unix.zip" /> 
+                <zip destfile="${dist}/unix.zip" basedir="${dist}/unix" includes="**" />
+        </target>
+
+        <target name="clean" depends="properties" description="Cleans all generated files">
+                <delete dir="${build}" />
+                <delete dir="${dist}" />
+        </target>
+
+</project>
+

@@ -1,0 +1,49 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+local_start('Leaders and Followers', 'Follow The Leader');
+applet_width = qs_body_width - qs_spacer_dist;
+applet_height = 400;
+html();
+</SCRIPT>
+
+<p>
+The initial actor below starts a blue Leader actor, 
+an orange Follower actor trailing the leader, and a yellow follower trying to reach the orange actor, and a light green follower trying to reach the yellow actor. 
+The actors' speeds are adjusted carefully so that the followers never reach their leaders. 
+The Follower actor is very similar to the
+to the Particle actors used in the
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_ref_menu_item('Particle Attraction example.', 'Gallery', 'Attraction'));
+html();
+</SCRIPT>
+</p>
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+applet_color = '#000078';
+local_applet_plain('FollowTheLeader', 
+	new Array(new Array("STP", 5 ), 
+          	  new Array("TW", 3)));
+wd(local_java_ref('FollowTheLeader'));
+wd("<BR>"); 
+wd(local_java_ref('Leader', 'Leader') + "<BR>");
+wd(local_java_ref('Follower', 'Follower'));
+wd("</TD></TR>");
+wd(qs_table_finish()); 
+html();
+</SCRIPT> 
+</p> 
+<SCRIPT LANGUAGE="JavaScript">
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

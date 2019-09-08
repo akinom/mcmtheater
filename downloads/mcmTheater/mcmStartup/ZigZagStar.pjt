@@ -1,0 +1,12 @@
+;; DrJava project file, written by build 20060127-2145;; 
+(source
+  (file (name "mcmUser/startup/ZigZagStar.java")
+        (select 0 0)(scroll 0 0)(mod-date "09-Jun-2006 14:47:38")(active)
+        (package "mcmStartup")))
+;; no aux files
+;; no collapsed branches
+(classpaths
+  (file (name "mcmTheater-saverbeans-api.jar")))
+(build-dir
+  (file (name "class")))
+;; no main class

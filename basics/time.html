@@ -1,0 +1,112 @@
+<HTML>
+<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./basics.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+//basics_width = 200; 
+basics_start('Time', 'Time and Actor Speed'); 
+html(); 
+</SCRIPT>
+<p> 
+
+The mcmTheater  <code>Stage</code> on which all <code>Actors</code> perform manages the progression of time.
+The <code>Stage</code> has a 'clock' which allows each actor to perform one timed step per clock tick. 
+There are only two types of timed steps in mcmTheater: 
+<UL>
+<LI> movement steps </LI>
+<LI> sleep steps </LI>
+</UL>
+
+Since an actor's moves are performed incrementally in steps whose length 
+is governed by its 
+<code>step size</code> 
+<SCRIPT LANGUAGE="JavaScript">
+wd("(see ");
+wd(qs_ref_menu_item("Movement Speed", "MCM Basics", "Movement Speed")); 
+wd(")");
+html();
+</SCRIPT>
+and since the 
+<code>Stage</code> allows only one such step per clock tick 
+actor's movement speed is directly correlated to their 
+<code>step sizes</code>: The Bigger The Faster.
+</p>
+<p> 
+Some 
+<code>Actors</code>
+do not move about the Stage.
+Instead they jump around the stage, change shape,  or change color to produce interesting effects.
+These <code>Actors</code>
+<B>must</B> explicitly tell their 
+<code>Stage</code>
+that they wish to continue execution after a given number of clock ticks. The 
+<code>sleep</code> method does just that.
+It puts the <code>Actor</code> on hold for the requested number of clock ticks. 
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+basics_debug = "false";
+wd(qs_table_start(0));
+basics_horiz_lesson('TimeJump5', 70, 
+                    'while (true) {\n' + 
+                    '   jumpTo(Dice.throwPoint(getStage()));\n' + 
+                    '   sleep(5);\n' + 
+                    '}',
+		'Jump and Sleep for 5 Clock Ticks', 
+		undefined); 
+basics_horiz_lesson('TimeJump20', 70, 
+                    'while (true) {\n' + 
+                    '   jumpTo(Dice.throwPoint(getStage()));\n' + 
+                    '   sleep(20);\n' + 
+                    '}',
+		'Jump and Sleep for 20 Clock Ticks', 
+		undefined); 
+basics_horiz_lesson('TimeRotate1', 70, 
+                    'while (true) {\n' + 
+		    '   right(6);\n' + 
+                    '   sleep(1);\n' + 
+                    '}',
+		'Turn Right and Sleep for 1 Clock Tick',
+		undefined); 
+basics_horiz_lesson('TimeRotate30', 70, 
+                    'while (true) {\n' + 
+		    '   right(6);\n' + 
+                    '   sleep(30);\n' + 
+                    '}',
+		'Turn Right and Sleep for 30 Clock Tick',
+		undefined); 
+basics_horiz_lesson('TimeStageColor', 70, 
+                    'while (true) {\n' + 
+                    '   getStage().setColor(Dice.throwColor());\n' +
+                    '   sleep(15);\n' + 
+                    '}',
+		'Change the Stage\'s Background Color every 15 Clock Ticks', 
+		undefined); 
+basics_horiz_lesson('TimeRecolor10', 70, 
+                    'while (true) {\n' + 
+		    '   getShape().setColor(Dice.throwColor());\n' + 
+                    '   sleep(10);\n' + 
+                    '}',
+		'Change Color and Sleep for 10 Clock Ticks', 
+		undefined); 
+basics_horiz_lesson('TimeRecolor1', 70, 
+                    'while (true) {\n' + 
+		    '   getShape().setColor(Dice.throwColor());\n' + 
+                    '   sleep(1);\n' + 
+                    '}',
+		'Change Color and Sleep for 1 Clock Tick', 
+		undefined); 
+
+wd(qs_table_finish()); 
+
+basics_finish('Aug 2005');
+html();
+</SCRIPT> 
+
+</HTML>

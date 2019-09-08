@@ -1,0 +1,72 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Start Ten Yellow and Ten Green Balloons', 'ManyGreenYellow');
+</SCRIPT>
+
+<p>
+Since the initial actor uses a 
+<code>for</code> loop to create pairs of green and yellow bouncing 
+ballons it is very easy to change it to create any number of pairs.
+The actor below chooses to create ten pairs by  
+changing the number 
+<code>4</code> used in the previous example's loop to the number 
+<code>10</code> in its own the loop. 
+The loop again starts its first execution with  the variable 
+<code>i</code> set to 1 and goes on by increasing that value by 1 for each 
+repetition. Thus 
+<code>i</code> becomes 2, 3, 4, ..., 10. The loop finishes when 
+<code>i</code> becomes bigger than 10. 
+</p> 
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('ManyGreenYellow',
+'public void act() {\n' + 
+'   for (int i = 1; i <= 10; i = i + 1) {\n' + 
+'      makeGreenYellow();\n' + 
+'   }\n' + 
+'}\n' + 
+'      \n' + 
+'public void makeGreenYellow() {\n' + 
+'   Stage stage = getStage();\n' + 
+'   Bouncer b;\n' + 
+'   ImageShape shape;\n' + 
+'   \n' + 
+'   b = new Bouncer();\n' + 
+'   b.jumpTo(Dice.throwPoint(stage));\n' + 
+'   b.setDirection(Dice.throwInt(360));\n' + 
+'   shape = \n' + 
+'      new ImageShape("theaterEx/bouncer/res/green.png",\n' + 
+'                          stage);\n' + 
+'   b.setShape(shape);\n' + 
+'   b.setTrailColor(Color.GREEN);\n' + 
+'   b.start(stage);\n' + 
+'   \n' + 
+'   b = new Bouncer();\n' + 
+'   b.jumpTo(Dice.throwPoint(stage));\n' + 
+'   b.setDirection(Dice.throwInt(360));\n' + 
+'   shape = \n' + 
+'      new ImageShape("theaterEx/bouncer/res/yellow.png",\n' + 
+'                          stage);\n' + 
+'   b.setShape(shape);\n' + 
+'   b.setTrailColor(Color.YELLOW);\n' + 
+'   b.start(stage);\n' + 
+'}'
+);
+
+html();
+
+local_next(); 
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

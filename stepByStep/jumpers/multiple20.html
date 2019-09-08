@@ -1,0 +1,96 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Many Actors That Jump All Over The Stage', 'multiple20');
+</SCRIPT>
+
+<p> 
+The 
+<SCRIPT LANGUAGE="JavaScript">
+local_prev('previous page', 'noPara'); 
+html();
+</SCRIPT>
+shows various actors that jump all over the stage performing a simple task at random locations. 
+This and the next page's initial actors show how to start multiple copies of these actors to execute simultaneoulsy on the stage. They  create actors with different properties such as varying trail or shape colors or different kinds of shapes.
+The initial actors below terminate afterwards leaving the stage to the jumping actors. 
+</p> 
+<p> 
+The links below the applets lead to the complete Java source code of the initial actors as well as the source code of the actors that they create and start.
+</p> 
+
+<SCRIPT LANGUAGE="JavaScript">
+applet_height= 180;
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+local_applet_start('Twenty Jumping Circles'); 
+</SCRIPT>
+<p> 
+This initial actor executes its 
+<code>for</code> loop twenty times creating a 
+<code>Jump</code> actor each time. 
+The created actors receive a circle shape with a random color. 
+Each new 
+<code>Jump</code> actor's 
+<code>delay</code> variable is set to a randomly chosen number between 5 and 25.
+Choosing different delays forces the <code>Jump</code> actors to jump at different intervals since they use their delays to determine how many ticks on the stage's clock they need to sleep between jumps.  
+Click on the <a href=jumpers/ManyJumps.java>JavaSource</a> link to see the complete listing of the initial actor, and on 
+Click on the <a href=jumpers/Jump.java>JavaSource: Jump</a> link to see the complete listing of the 
+<code>Jump</code> actor.
+</p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet_finish('ManyJumps',
+'public void act() {\n' + 
+'   for (int i = 0; i < 20; i++) { // 20 times \n' + 
+'      Jump jump = new Jump(); \n' + 
+'      Shape shape = new EllipseShape(15, 15, true); \n' + 
+'      shape.setColor(Dice.throwColor());\n' + 
+'      jump.setShape(shape);\n' + 
+'      jump.delay = Dice.throwInt(5, 25);\n' + 
+'      jump.start(getStage());\n' + 
+'   }\n' + 
+'}'
+, 'Jump'); 
+wd("</TD></TR>"); 
+local_row_spacer();
+local_row_spacer();
+wd("<TR><TD>"); 
+local_applet_start( 'Twenty Growing Squares');
+</SCRIPT>
+<p>
+This actor is almost identical to the initial actor above.
+It differs in that it creates <code>JumpGrowShape</code> instead of <code>Jump</code> actors and that it assigns <code>RectangleShapes</code> instead of <code>EllipseShapes</code> to the newly created actors. 
+</p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet_finish('ManyGrowSquares', 
+'public void act() {\n' + 
+'   for (int i = 0; i < 20; i++) { // 20 times \n' + 
+'      Actor actor = new JumpGrowShape(); \n' + 
+'      Shape shape = new RectangleShape(5, 5, true); \n' + 
+'      shape.setColor(Dice.throwColor());\n' + 
+'      actor.setShape(shape);\n' + 
+'      actor.start(getStage());\n' + 
+'   }\n' + 
+'}', 
+'JumpGrowShape'); 
+wd("</TD></TR>"); 
+wd(qs_table_finish()); 
+html();
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+wd("<p> To see two more examples proceed to the "); 
+local_next('next page.', 'noPara');
+wd("</p>");
+
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

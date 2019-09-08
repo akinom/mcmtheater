@@ -1,0 +1,59 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('One Balloon, Two Balloons, ..., Many Balloons', 'index');
+</SCRIPT>
+
+<p>
+The applet to the left shows a 
+<code>Bouncer</code> actor that starts in the center of the stage and 
+initially heads towards the upper right. 
+<code>Bouncer</code> is a predefined actor that as may be seen below bounces around the 
+<code>Stage</code>
+like a billard ball on a pool table. 
+
+These pages explain how to change an 
+<code>Actor </code> that starts a single 
+<code>Bouncer</code>
+into one that starts two , four, or many, each showing a balloon image. 
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+applet_width = (qs_body_width - 4 * qs_spacer_dist) /3; 
+applet_height = 300; 
+
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+local_indent(); 
+local_applet_plain('OneBounce'); 
+local_ref("One Bouncer", "OneBounce.html"); 
+local_unindent(); 
+wd("</TD><TD>"); 
+local_indent(); 
+local_applet_plain('FourGreenYellow'); 
+local_ref("Four Bouncers", "FourGreenYellow.html"); 
+local_unindent(); 
+wd("</TD><TD>"); 
+local_indent(); 
+local_applet_plain('ManyNoTrailSpeed'); 
+local_ref("Many Bouncers", "ManyNoTrailSpeed.html"); 
+local_unindent(); 
+wd("</TD></TR>");
+wd(qs_table_finish()); 
+html();
+
+local_next('See Step By Step Explanation'); 
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

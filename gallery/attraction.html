@@ -1,0 +1,69 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+local_start('Actors attracting each other', 'Attraction');
+applet_width = qs_body_width - qs_spacer_dist;
+applet_height = 400;
+html();
+</SCRIPT>
+
+<p>
+The mcmTheater program below is inspired by a physics question from the 
+<A href=http://www.paideiaschool.org>Paideia School</a> in Atlanta, Georgia: 
+Particle A, B, and C are placed at the corners of a regular triangle. 
+If A attracts B, B attracts C, and C attracts A, how do A, B, and C move towards each other ? How far do they travel before they meet ? 
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+local_applet_plain('TriangleAttraction',  
+                    new Array(new Array("STP", "1" ) ));
+wd(local_java_ref('TriangleAttraction'));
+wd("<BR>"); 
+wd(local_java_ref('Particle', 'Particle'));
+wd("</TD></TR>");
+wd(qs_table_finish()); 
+html();
+</SCRIPT> 
+
+<p> 
+The program above consists of an initial actor that starts three 
+<code>Particle</code> actors, one at each corner of a regular triangle. 
+To distinguish the three further they are given 
+red, blue, and green circle shapes and trail colors.  
+Each <code>Particle</code> has a <code>leader</code> towards which it moves.
+The initial actor sets the 'blue' <code>Particle</code>  actor's leader to be the 'red'  actor.
+The 'red' actor's leader to be the 'green' actor and  
+the 'green' actor's leader to be the 'blue' actor.
+</p> 
+<p>
+The <code>Particle</code> actors do the following once they start:
+They check where their leaders are,
+set their direction so they are heading towards them,
+move  a few  pixels forward towards their leader,
+recheck their leader's positions,
+readjust their direction,
+move some more pixels forward, ... 
+until they get close enough to their leaders. 
+How many pixles an actor moves between checking its leader's position depends on the actor's step size. In 
+the applet above actor's use a step size of 1 pixel. Being close enough to the leader is defined as: the distance between the leader's and actor's positions is smaller than the actor's step size.
+</p> 
+<p> 
+The initial actor starts another set of three 
+<code>Particle</code> actors whenever the previous set meets at the triangle's center. 
+</p> 
+
+
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

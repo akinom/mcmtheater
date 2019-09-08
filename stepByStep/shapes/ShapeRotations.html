@@ -1,0 +1,109 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Rotations of Differently Sized Triangles', 'ShapeRotations');
+</SCRIPT>
+
+<p>
+The first and second pair of actors draw the same triangles.
+They differ in the way the triangles are rotated. 
+The left actor in each pair draws its differently sized  triangles 
+and turns 90 degrees after <b>all</b> of them. 
+The right actors turn after drawing <b>each</b> triangle.
+</p> 
+
+<p> 
+The 
+<SCRIPT LANGUAGE="JavaScript">
+local_next("next page", 'noParagraph');
+html();
+</SCRIPT>
+modifies the bottom right actor to change its trail's color as well as the stage's color. 
+</p> 
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+applet_width = (qs_body_width - 3 * qs_spacer_dist) /2; 
+applet_height = 140; 
+
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+local_indent(); 
+local_vert_applet('ShapeSize2Rotate',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      shape(60);\n' + 
+'      shape(40);\n' + 
+'      right(90);\n' + 
+'   }\n' + 
+'}\n ');
+local_unindent(); 
+html();
+wd("</TD><TD>"); 
+local_indent(); 
+local_vert_applet('ShapeRotateSize2',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      shape(60);\n' + 
+'      right(45);\n' + 
+'      shape(40);\n' + 
+'      right(45);\n' + 
+'   }\n' + 
+'}' );
+local_unindent(); 
+wd("</TD></TR>"); 
+
+local_row_spacer();
+local_row_spacer();
+
+applet_height = 200;
+wd("<TR><TD>"); 
+local_indent(); 
+local_vert_applet('ShapeSize3Rotate',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      shape(90);\n' + 
+'      shape(60);\n' + 
+'      shape(30);\n' + 
+'      right(90);\n' + 
+'   }\n' + 
+'}\n \n ');
+local_unindent(); 
+html();
+wd("</TD><TD>"); 
+local_indent(); 
+local_vert_applet('ShapeRotateSize3',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      shape(90);\n' + 
+'      right(30);\n' + 
+'      shape(60);\n' + 
+'      right(30);\n' + 
+'      shape(40);\n' + 
+'      right(30);\n' + 
+'   }\n' + 
+'}');
+local_unindent(); 
+wd("</TD></TR>"); 
+wd(qs_table_finish());
+html();
+</SCRIPT>
+</p>
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+local_next(); 
+
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

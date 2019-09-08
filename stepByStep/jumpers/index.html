@@ -1,0 +1,49 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Actors That Jump All Over The Stage', 'index');
+</SCRIPT>
+
+<p>
+These pages explain how to program actors that perform a simple task in between jumping around the stage. The pages show as well how to start multiple copies of these actors to execute simultaneously. 
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+applet_width = (qs_body_width - 4 * qs_spacer_dist) /3; 
+applet_height = applet_width; 
+
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+local_indent();
+local_applet_plain('JumpSquare'); 
+local_ref('Single Jumpers', 'single.html'); 
+local_unindent();
+wd("</TD><TD>"); 
+local_indent();
+local_applet_plain('ManyGrowSquares'); 
+local_ref('Many Jumpers', 'multiple20.html'); 
+local_unindent();
+wd("</TD><TD>"); 
+local_indent();
+local_applet_plain('ListJumpAcross'); 
+local_ref('Four Jumpers', 'multiple4.html'); 
+local_unindent();
+wd("</TD></TR>");
+wd(qs_table_finish()); 
+html();
+
+local_next('See Step By Step Explanation'); 
+
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>
+

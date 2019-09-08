@@ -1,0 +1,83 @@
+<html> 
+<SCRIPT LANGUAGE="JavaScript" SRC="js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+qs_doc_start('MCM Theater Home', undefined); // don't do <HEAD> section
+qs_doc_headline('Java Programming for Middle and High School Students');
+qs_body_start(true);
+
+applet_width = (qs_body_width - 4 * qs_spacer_dist) /3; 
+applet_height = applet_width; 
+
+var local_width = applet_width; 
+var local_height = local_width;
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+wd(qs_indent()); 
+wd(qs_applet('theaterEx.bouncer.ManyNoTrailSpeed',
+            'stepByStep/bouncer/theaterEx', local_width, local_height).getHtmlString()); 
+wd('<a href=./stepByStep/bouncer/index.html>StepByStep Lesson</a>'); 
+wd(qs_unindent()); 
+wd("</TD><TD>"); 
+wd(qs_indent()); 
+wd(qs_applet('theaterEx.drawSquares.Image',
+             'stepByStep/drawSquares/theaterEx', local_width, local_height).getHtmlString()); 
+wd('<a href=./stepByStep/drawSquares/index.html>StepByStep Lesson</a>'); 
+wd(qs_unindent()); 
+wd("</TD><TD>"); 
+wd(qs_indent()); 
+
+wd(qs_applet('theaterEx.shapes.triangle.Shape3PackFinal',
+             'stepByStep/shapes/theaterEx', local_width, local_height).getHtmlString()); 
+wd('<a href=./stepByStep/shapes/index.html>StepByStep Lesson</a>'); 
+wd(qs_unindent()); 
+wd("</TD></TR>"); 
+wd(qs_table_finish()); 
+
+//alerthtml();
+html(); 
+</SCRIPT> 
+
+<p> 
+The MCM Theater package was developed as a vehicle to teach computer programming to older middle students as well as high school students.
+Its concepts are heavily influenced by Turtle Logic, which has been developed at MIT to teach programming to even younger students. 
+MCM Theater enables students to develop  visually appealing  programs with a minimal amount  of Java code.
+The 
+<a href=./stepByStep/drawSquares/Image.html> hand above</a>,
+for example, that draws a series of squares, is realized by a program with eight statements only. 
+Students can post their programs as applets on the Internet or compile them as screensavers for Windows and Unix platforms.
+</p><P>
+MCM Theater is a small self contained package that contains just enough features to enable beginning programmers whithout distracting them with too many features and options from the task at hand.
+It provides an excellent platform for an introductory course to Java programming.
+</P><P>
+MCM Theater and the software it depends upon is <a href=./downloads/index.html>free of charge</a>. 
+Students can store the package as well as their own programs on a JumpDrive and carry their work between school and home.
+Programs developed can be setup to run as applets in any browser, as 
+screensavers on Windows and Unix platforms, and as applications, which is useful while developing and testing. 
+</P><P>
+Whether a program is visually appealing depends in no small part on the images and colors used. This opens opportunities in cross curricular teaching, connecting programming with art and image editing. 
+The moving <a href=./gallery/boat.html>boat collage</a> in the <A href=./gallery/index.html>gallery</a> is such an example. 
+</P><P>
+MCM Theater uses a theater metaphor.
+Each program contains a Stage which shows Actors moving about. 
+Their movement  is programmed  in terms of 
+<A href=./basics/move.html>move forward</a> and 
+<a href=./basics/turn.html>turn</a> statements, which are intuitively understandable actions. 
+Thus, when students are presented with a small example program, they are immediately ready to dive into the edit-compile-test cycle of programming. 
+</P><P>
+Students can be lead through a series of examples that teach them about parameterization, 
+control structures, methods, 
+variables and state, and even the concepts of object oriented programming. 
+First steps include setting an Actor's <a href=./basics/colorWidth.html>trail width or color</a>, 
+changing an actor's <a href=./basics/moveSpeed.html>movement speed,</a>, 
+asigning different <A href=./basics/shapes.html>shapes</a> in various sizes, ...
+In each further step students produce ever more complex pattern drawing actors.
+Since there are no limits to what one can do with the Java programming language MCM Theater can be stretched to teach the most able students.  
+At the same time its basic concepts are intuitive enough to accomodate novice programmers as well. 
+</P> 
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_doc_finish('Jun 2006');
+html(); 
+</SCRIPT>
+</html> 

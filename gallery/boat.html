@@ -1,0 +1,48 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+local_pkg = 'collage'
+local_start('Boat On Ocean', 'Boat Collage');
+html();
+</SCRIPT>
+
+<p>
+The moving collage below consists of five waves, see
+<SCRIPT LANGUAGE="JavaScript">
+wd(local_java_ref('ocean.Wave', 'Wave'));
+html(); 
+</SCRIPT> 
+Each moves along a 40 pixel square. The 
+boat and clouds simply move across the stage. When they fall of on the right side they reappear on the left, see 
+<SCRIPT LANGUAGE="JavaScript">
+wd(local_java_ref('ocean.Across', 'Across'));
+html(); 
+</SCRIPT> 
+</p> 
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+local_applet_plain('ocean.BoatFinal',
+                    new Array(new Array("STP", 5 ) ));
+wd(local_java_ref('ocean.BoatFinal'));
+wd('<BR>'); wd(local_java_ref('ocean.Wave', 'Wave'));
+wd('<BR>'); wd(local_java_ref('ocean.Across', 'Across'));
+wd("</TD></TR>");
+wd(qs_table_finish()); 
+html();
+</SCRIPT> 
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

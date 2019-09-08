@@ -1,0 +1,83 @@
+<HTML>
+<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./basics.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+basics_start('Simple Actors', 'Simple Shape Drawing Actors'); 
+html(); 
+</SCRIPT>
+
+<p>
+Actors form the core of the mcmTheater package.
+They have shapes, move about and may leave a trail along their movement path.
+The actors below are simple examples, move and turn commands can be used to draw some simple shapes. 
+</p><p>
+The applets below run one actor each. 
+All actors start with  default colors and appear at the center of the applet window showing a default shape, 
+a circle that contains a line to indicate movement direction.
+They exceute in debug mode, which slows turning and moving. 
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+basics_lesson_start();
+basics_lesson( 'Square',  8, 
+'move(45);\n' + 
+'left(90);\n' + 
+'move(45);\n' + 
+'left(90);\n' + 
+'move(45);\n' + 
+'left(90);\n' + 
+'move(45);\n' + 
+'left(90);'
+); 
+
+basics_lesson( 'RectangleLeft',  8, 
+'move(80);\n' + 
+'left(90);\n' + 
+'move(50);\n' + 
+'left(90);\n' + 
+'move(80);\n' + 
+'left(90);\n' + 
+'move(50);\n' + 
+'left(90);');
+
+basics_lesson( 'RectangleRight',  8, 
+'move(80);\n' + 
+'right(90);\n' + 
+'move(50);\n' + 
+'right(90);\n' + 
+'move(80);\n' + 
+'right(90);\n' + 
+'move(50);\n' + 
+'right(90);');
+
+
+basics_lesson( 'Rhombus',  8, 
+'move(50);\n' + 
+'right(45);\n' + 
+'move(50);\n' + 
+'right(135);\n' + 
+'move(50);\n' + 
+'right(45);\n' + 
+'move(50);\n' + 
+'right(135);');
+
+qs_lesson_finish(); 
+html();
+</SCRIPT> 
+
+<p> 
+To see some more complicated examples click <a href='./shapes.html'>here</a>. 
+</p> 
+<SCRIPT LANGUAGE="JavaScript">
+basics_finish('Aug 2005');
+html();
+</SCRIPT> 
+
+</HTML>

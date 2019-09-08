@@ -1,0 +1,56 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_debug = "false";
+local_start('Use A Hand To Represent The Actor', 'Image'); 
+applet_height = 200;
+</SCRIPT>
+
+<p>
+Now that the <code>Actor</code> draws an interesting pattern it deserves to be represented on <code>Stage</code> by an interesting shape. This <code>Actor</code> uses 
+the image defined in the file 
+<a href=theaterEx/drawSquares/res/hand.png>theaterEx/drawSquares/res/hand.png: </a>
+<img src=theaterEx/drawSquares/res/hand.png>.
+</p><p>
+An <code>ImageShape's</code> <code>hotSpot</code> is a point defined relative to the images lower left corner. The hot spot is the point within the image that is aligned with the actor's current position on the <code>Stage</code>. 
+This program defines the hot spot to be <code>(8,0)</code>, that is the point 8 pixels to the right and 0 pixels up from the images lower left corner. 
+Note that the actor calls <code>setRotatesShape(false);</code> to indicate 
+that its  shape should not be rotated according to its movement direction. 
+Click on <a href=ImageRot.html>Rotating Image</a> to see the actor with image rotation turned on. 
+
+</p>
+<SCRIPT LANGUAGE="JavaScript">
+applet_height = 230;
+local_applet('Image',
+'public void act() {\n' + 
+'   Shape shape;\n' + 
+'   shape = new ImageShape("drawSquares/res/hand.png",\n' + 
+'                          getStage());\n' + 
+'   shape.setHotSpotPoint(new Point(8, 0));\n' + 
+'   setShape(shape); \n' + 
+'   setRotatesShape(false); \n' + 
+'   \n' + 
+'   while (true) {\n' + 
+'      for (double len = 10; len <= 80; len = len + 10) {\n' +
+'         setTrailColor(Dice.throwColor());\n' +
+'         square(len); right(180);\n' +
+'      }\n' +
+'   }\n' +
+'}', false // no restart because of image usage 
+);
+html();
+
+local_next(); 
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

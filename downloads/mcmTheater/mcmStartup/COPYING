@@ -1,0 +1,9 @@
+Copyright ©  2005, 2006, 2007 Monika Mevenkamp
+All Rights Reserved 
+
+The mcmTheater API provides a set of classes that build a simple framework to develop Java Screensavers and Applets. The applets can run on any Internet browser and the screensavers can be executed on Windows and Unix platforms.
+
+The MCM Theater package was developed as a vehicle to teach computer programming to older middle and high school students. The ideas in this package are heavily influenced by Turtle Logic, which has been developed at MIT to teach programming to even younger students. MCM Theater enables students to develop visually appealing programs with a minimal amount of Java code. 
+
+Program examples and further information is available at
+http://www.mcmprogramming.com/mcmtheater/

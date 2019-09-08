@@ -1,0 +1,109 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Start One Bouncer ... Start Twor', 'OneBounce');
+</SCRIPT>
+
+<p>
+The initial actor in the applet below starts one 
+<code>Bouncer</code> actor. In its first statement it retrieves a reference to 
+the <code>Stage</code> and remembers it in the variable <code>stage</code> for later use. 
+The second statement creates a new <code>Bouncer</code>, which is forced to jump to the center of the <code>stage</code> in the third statement.
+The direction of the new <code>Bouncer</code> is set to <code>15</code> degrees, meaning it is set to head towards the upper right. 
+</p>
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+applet_height=150;
+local_applet('OneBounce',
+'public void act() {\n' + 
+'   Stage stage = getStage();\n' + 
+'   Bouncer b = new Bouncer();\n' + 
+'   b.jumpTo(stage.getCenter()); \n' + 
+'   b.setDirection(15);\n' + 
+'   b.start(stage);\n' + 
+'}');
+html();
+</SCRIPT>
+</p>
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_table_start(0)); 
+wd(qs_tr(qs_td(
+"The initial actor below gives the newly created <code>Bouncer</code> an image as its shape and colors its trail green. " + 
+"<code>ImageShapes</code> can be created from image files in standard formats such as jpg, gif, png." + 
+"In this case we use a png image: <A href=bouncer/res/green.png>bouncer/res/green.png</a>.") + 
+qs_td( "<a href=theaterEx/bouncer/res/green.png><img src=theaterEx/bouncer/res/green.png></a>"))); 
+wd(qs_table_finish()); 
+html();
+</SCRIPT>
+</p>
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+applet_height=220;
+local_applet('OneGreen',
+'public void act() {\n' + 
+'   Stage stage = getStage();\n' + 
+'   Bouncer b; \n' + 
+'   b = new Bouncer();\n' + 
+'   b.jumpTo(stage.getCenter()); \n' + 
+'   b.setDirection(15);\n' + 
+'   ImageShape shape =\n' + 
+'      new ImageShape("theaterEx/bouncer/res/green.png",\n' + 
+'                     stage)); \n' + 
+'   b.setShape(shape); \n' + 
+'   b.setTrailColor(Color.GREEN); \n' + 
+'   b.start(stage);\n' + 
+'}');
+html();
+</SCRIPT>
+</p>
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_table_start(0)); 
+wd(qs_tr(qs_td(
+"The following actor repeats the first block of statements to create a second <code>Bouncer</code> actor." + 
+"It uses a different image file to set the second actor's shape,  makes its trail yellow instead of green, and sets its direction to a <code>30</code> degree angle, to avoid that the two <code>Bouncers</code> follow the same path. " + 
+"The code to the right of the applet shows the additional statements only. To see the complete source click on the " + 
+local_java_ref('OneGreenYellow') + 
+" link." ) +
+qs_td("<a href=theaterEx/bouncer/res/yellow.png><img src=theaterEx/bouncer/res/yellow.png></a>"))); 
+wd(qs_table_finish()); 
+html();
+</SCRIPT>
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+wd("<p>"); 
+local_applet('OneGreenYellow',
+'   //  ... create green balloon \n' + 
+'   //  ... &lt;see above&gt; \n' +  
+' \n' + 
+'   //  ... create yellow balloon \n' + 
+'   b = new Bouncer();\n' + 
+'   b.jumpTo(stage.getCenter()); \n' + 
+'   b.setDirection(15);\n' + 
+'   ImageShape shape =\n' + 
+'      new ImageShape("theaterEx/bouncer/res/yellow.png",\n' + 
+'                     stage)); \n' + 
+'   b.setShape(shape); \n' + 
+'   b.setTrailColor(Color.YELLLOW); \n' + 
+'   b.start(stage);');
+wd("</p>"); 
+
+local_next(); 
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

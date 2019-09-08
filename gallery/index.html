@@ -1,0 +1,114 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+local_start('A Gallery of Examples', undefined);
+</SCRIPT>
+
+<p>
+This Gallery contains various mcmTheater programs. 
+You can click on any of the links below to see programs execute in their own applets.
+All code is documented and available through source links. 
+</p>
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+var anim_num = 0; 
+var anim_id = 0; 
+var anim_array = new Array(); 
+var anim_reverse = new Array(); 
+var anim_timer = null; 
+
+function anim_start()
+{
+    if (anim_timer == null) {
+        anim_images(); 
+    }
+}
+
+function anim_stop(file) 
+{
+    if (anim_timer != null) {
+        clearTimeout(anim_timer); 
+	anim_timer = null; 
+    }
+    document['dot' + anim_id].src =  qs_trans_img;
+    anim_id = anim_reverse[file];
+    document['image'].src = 'img/' + file + '.png';
+    document['dot' + anim_id].src = qs_dot_img;
+
+}
+
+function anim_images()
+{
+    document['dot' + anim_id].src =  qs_trans_img;
+    anim_id = (anim_id + 1) % anim_num; 
+    document['image'].src = 'img/' + anim_array[anim_id] + '.png';
+    document['dot' + anim_id].src =  qs_dot_img;
+    anim_timer = setTimeout("anim_images();", 2000); 
+} 
+
+function anim_ref(file, title, html_file) 
+{
+   if (html_file == undefined) {
+      html_file = file; 
+   }
+   anim_array[anim_num] = file; 
+   anim_reverse[file] = anim_num;
+   s = qs_table_start(0, "100%");
+   s += "<TR>"; 
+   s += qs_td( "<img name=dot" + anim_num + 
+               " src=" + qs_trans_img + " width=7px align=middle> ",
+               "align=right width=9px"); 
+   s += qs_col_spacer(qs_spacer_dist, 1); 
+   s += qs_td( "<a href=" + html_file + ".html " + 
+	   "onMouseOver=\"anim_stop('" + file + "');return true;\" " + 
+	   "onMouseOut=\"anim_start();\" " + 
+	   "> " + 
+	   title + "</a>", 
+           "align=left");
+   s += "</TR>";
+   s += qs_row_spacer(qs_spacer_dist);
+   s += qs_table_finish();
+   anim_num++; 
+   return s;
+}
+
+wd(qs_table_start(0, qs_body_width) + "<TR><TD>"); 
+wd("<TR><TD valign=top align=left>"); 
+wd(qs_colored_table_start(3)); 
+wd(qs_tr(qs_td("<IMG name=image src=img/leafs.png>"))); 
+wd(qs_table_finish()); 
+wd("</TD>" + qs_col_spacer(qs_spacer_dist, 1) + "<TD valign=top align=right>"); 
+wd(anim_ref("leafs", "Falling Leafs"));  
+wd(anim_ref("monaLisa", "Mona Lisa Loses Her Head"));  
+wd(anim_ref("boat", "Boat on Ocean "));  
+wd(anim_ref("galloway06", "Galloway 8th Graders", "../class/2006.galloway/index"));  
+wd(anim_ref("jumpMove", "Pulsing Half Circles "));  
+wd(anim_ref("shootLines", "Spiraling Circle Segments"));  
+wd(anim_ref("spirals", "Spirals follow Spirals"));  
+wd(anim_ref("growAndClone", "Growing Shapes"));  
+wd(anim_ref("marching", "Marching Blocks"));  
+wd(anim_ref("attraction", "Particles Attracting Each Other ")); 
+wd(anim_ref("follower", "A Leader and Three Followers")); 
+wd(anim_ref("exponential", "Exponential Growth "));  
+wd("</TD>");
+wd("</TR>"); 
+wd(qs_table_finish());
+html();
+</SCRIPT>
+</p>
+
+
+<SCRIPT LANGUAGE="JavaScript">
+anim_id = anim_num -1;
+anim_start(); 
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

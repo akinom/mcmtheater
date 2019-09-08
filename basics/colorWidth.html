@@ -1,0 +1,88 @@
+<HTML>
+<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./basics.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+basics_width = 250; 
+basics_big_width = 2 * basics_width + 36; 
+basics_start('TrailColor/Width', 'Trail Color and Width'); 
+html(); 
+</SCRIPT>
+<p>
+Actors leave a trail along their movement trail by default. 
+The actors below show how the trail's color and width can be programmed.
+
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_applet_info()); 
+wd("</p>"); 
+wd("<p>"); 
+wd(qs_table_start(0));
+wd("<TR>"); 
+   wd(qs_col_spacer(24)); 
+   wd("<TD>"); 
+   	basics_lesson('Change the width with <code>setTrailWidth</code>', 
+                'LineTrailWidth',  41, 
+		'setTrailWidth(3);\n' + 
+		'move(10);\n' + 
+		'setTrailWidth(5);\n' + 
+		'move(20);\n' + 
+		'setTrailWidth(7);\n' + 
+		'move(30);\n' + 
+		'\n');
+   wd("</TD>"); 
+   wd(qs_col_spacer(36)); 
+   wd("<TD>"); 
+   	basics_lesson('Change the color with <code>setTrailColor</code>',
+   		'LineColor',  41, 
+		'setTrailWidth(3);\n' + 
+   		'setTrailColor(Color.GREEN);\n' + 
+   		'move(10);\n' + 
+   		'setTrailColor(Color.ORANGE);\n' + 
+   		'move(20);\n' + 
+   		'setTrailColor(Color.MAGENTA);\n' + 
+   		'move(30);');
+   wd("</TD>"); 
+wd("</TR>"); 
+wd(qs_row_spacer(24)); 
+wd("<TR valign=top>"); 
+basics_width = basics_big_width; 
+   wd(qs_col_spacer(12)); 
+   wd("<TD colspan=4 align=center>"); 
+   basics_lesson('Change color and width: A combination of the two actors above', 
+   			'LineWidthColor',  41, 
+			'setTrailWidth(3);  ' + 
+			'setTrailColor(Color.GREEN);\n' + 
+			'move(10);\n' + 
+			'setTrailWidth(5);  ' + 
+			'setTrailColor(Color.ORANGE);\n' + 
+			'move(20);\n' + 
+			'setTrailWidth(7);  ' + 
+			'setTrailColor(Color.MAGENTA);\n' + 
+			'move(30);');
+   wd("</TD>"); 
+wd("</TR>"); 
+wd(qs_row_spacer(24)); 
+wd("<TR valign=top>"); 
+basics_width = basics_big_width; 
+   wd(qs_col_spacer(12)); 
+   wd("<TD colspan=4 align=center>"); 
+   basics_lesson('Make the Trail Invisible', 
+   			'LineInvisible',  41, 
+			'setTrailVisible(false); \n' +
+		        'move(60); ');
+   wd("</TD>"); 
+wd("</TR>"); 
+wd(qs_table_finish()); 
+wd("</p>"); 
+
+basics_finish('Aug 2005');
+html();
+</SCRIPT> 
+
+</HTML>

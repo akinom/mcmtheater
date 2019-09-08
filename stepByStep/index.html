@@ -1,0 +1,74 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="list.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+qs_doc_start('Step By Step', undefined, true); 
+qs_doc_headline('Step By Step Guides');
+qs_body_start(true);
+
+local_width = 180;
+local_height = 230;
+html();
+</SCRIPT>
+
+<p>
+Click on the links below the applet that you like to see a step by step guide to
+developing such an mcmTheater program. 
+</p>
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+list_indent(); 
+wd(qs_applet('theaterEx.bouncer.ManyNoTrailSpeed', 'bouncer/theaterEx', local_width, local_height).getHtmlString()); 
+wd(qs_ref_menu_item('Bouncing Balloons',
+	             'Step By Step', 'Bouncers')) ;
+list_unindent(); 
+wd("</TD><TD>");
+list_indent(); 
+wd(qs_applet('theaterEx.drawSquares.Image', 'drawSquares/theaterEx', local_width, local_height).getHtmlString()); 
+wd(qs_ref_menu_item('Drawing Squares',
+	             'Step By Step', 'Draw Squares')) ;
+list_unindent(); 
+wd("</TD><TD>");
+list_indent(); 
+wd(qs_applet('theaterEx.sy.Start5Scale', 'sy/theaterEx', local_width, local_height).getHtmlString());
+wd(qs_ref_menu_item('Busy Rectangles',
+	             'Step By Step', 'A First Program'));
+list_unindent(); 
+wd("</TD></TR>");
+
+list_row_spacer(); 
+
+local_height = 179;
+
+wd("<TR><TD>");
+list_indent(); 
+wd(qs_applet('theaterEx.shapes.triangle.ShapeCtrLineClear', 'shapes/theaterEx', local_width, local_height).getHtmlString());
+wd(qs_ref_menu_item('Triangle Combinations', 'Step By Step', 'Triangles ...'));
+list_unindent(); 
+wd("</TD><TD>");
+list_indent(); 
+wd(qs_applet('theaterEx.generators.RepeaterFromSquare', 'generators/theaterEx', local_width, local_height).getHtmlString());
+wd(qs_ref_menu_item('Shoot Moving Actors', 'Step By Step', 'Generators'));
+list_unindent(); 
+wd("</TD><TD>");
+list_indent(); 
+wd(qs_applet('theaterEx.jumpers.ManyGrowSquares', 'jumpers/theaterEx', local_width, local_height).getHtmlString());
+wd(qs_ref_menu_item('Jumping Everywhere', 'Step By Step', 'Jumpers'));
+list_unindent(); 
+wd("</TD></TR>");
+wd(qs_table_finish()); 
+html();
+wd("</p>"); 
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

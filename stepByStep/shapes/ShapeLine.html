@@ -1,0 +1,98 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Sliding Triangles Along a Line', 'ShapeLine');
+</SCRIPT>
+
+<p> 
+The first actor below jumps 10 pixels forward before drawing a triangle and keeps doing so forever even when it reaches the edge of the stage. 
+</p> 
+
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+list_height = 160;
+local_applet('ShapeLine',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      jump(10);\n' + 
+'      shape(10);\n' + 
+'   }\n' + 
+'}');
+html();
+</SCRIPT>
+</p>
+
+<p>
+The second actor is a little smarter.
+It jumps and draws triangles only as long as it stays within the stage's boundaries, see 
+<code>while (getStage().isInside(getPos())) { ... }</code>.
+It draws rotated triangles by turning 30 degrees to the left before calling its triangle drawing <code>shape</code> method. 
+It turns 30 degrees right afterwards so that its directions is again the same as when it started acting. 
+Thus it always jumps foward in the same direction drawing its triangles along a straight line.  
+</p> 
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('ShapeCtrLine',
+'public void act() {\n' + 
+'   while (getStage().isInside(getPos())) {\n' + 
+'      jump(12);\n' + 
+'      left(30);\n' + 
+'      shape(10);\n' + 
+'      right(30);\n' + 
+'   }\n' + 
+'}');
+html(); 
+</SCRIPT>
+</p>
+
+<p>
+The following actor is a variant of the one above. 
+It jumps to a random position on the stage followed by a call to the <code>shapeLine</code> method, which  
+draws a series of triangles until reaching the stage's edge. The <code>shapeLine()</code> method contains the same <code>while (getStage().isInside(getPos())) { ... }</code> loop as the previous actors <code>act()</code> method. 
+</p> 
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+list_height = 240;
+local_applet('ShapeCtrLineJump',
+'public void act() {\n' + 
+'   jumpTo(Dice.throwPoint(getStage()));\n' + 	
+'   shapeLine();\n' + 
+'}\n' + 
+'\n' + 
+'public void shapeLine() \n' +
+'{\n' +
+'   while (getStage().isInside(getPos())) {\n' + 
+'      jump(12);\n' + 
+'      left(30);\n' + 
+'      shape(10);\n' + 
+'      right(30);\n' + 
+'   }\n' + 
+'}');
+html(); 
+</SCRIPT>
+</p>
+
+<p>
+The 
+<SCRIPT LANGUAGE="JavaScript">
+local_next("next page", 'noParagraph');
+html();
+</SCRIPT>
+shows how multiple copies of this last actor can be started so that they execute in parallel on the stage. 
+</p> 
+
+<SCRIPT LANGUAGE="JavaScript">
+
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

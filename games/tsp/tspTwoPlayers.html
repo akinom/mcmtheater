@@ -1,0 +1,150 @@
+<html> 
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript"> 
+function keys_table() 
+{
+s = ""; 
+s += qs_table_start(0, "id'=arrows' bgcolor='white'"); 
+s += "<tr>\n"; 
+s += "        <td class='red'>Red Player</td> \n"; 
+s += "        <td class='middle'>Movement</td> \n"; 
+s += "	<td class='blue'> Blue Player</td> \n"; 
+s += "</tr>\n"; 
+s += "<tr>\n"; 
+s += "        <td class='red'>w</td> \n"; 
+s += "        <td class='middle'>Up</td> \n"; 
+s += "	<td class='blue'>Arrow UP</td> \n"; 
+s += "</tr>\n"; 
+s += "<tr>\n"; 
+s += "	<td class='red'>a</td> \n"; 
+s += " 	<td class='middle'>Left</td> \n"; 
+s += "	<td class='blue'>Arrow LEFT</td> \n"; 
+s += "</tr>\n"; 
+s += "<tr>\n"; 
+s += "	<td class='red'>s</td> \n"; 
+s += " 	<td class='middle'>Down</td> \n"; 
+s += "	<td class='blue'>Arrow DOWN</td> \n"; 
+s += "</tr>\n"; 
+s += "<tr>\n"; 
+s += "	<td class='red'>d</td> \n"; 
+s += " 	<td class='middle'>Right</td> \n"; 
+s += "	<td class='blue'>Arrow RIGHT</td> \n"; 
+s += "</tr>\n"; 
+s += "<tr>\n"; 
+s += "	<td class='red'>` (BackSlash)</td> \n"; 
+s += " 	<td class='middle'>Select A City</td> \n"; 
+s += "	<td class='blue'>Enter</td> \n"; 
+s += "</tr>\n"; 
+s += qs_table_finish(); 
+return s; 
+}
+</script>
+
+
+<style type="text/css"> 
+	table.arrows { text-align: center;
+	} 
+
+	.blue {
+    		color: blue;
+    		text-align: center;
+		padding: 0px 8px 0px 0px;
+	}
+	.red {
+    		color: red;
+		text-align: center;
+	}
+
+	.middle {
+    		text-align: center;
+		padding: 0px 8px 0px 6px;
+	}
+</style>
+
+<head>
+	<title> Two Player TSP Game </title>
+</head>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+qs_doc_start('Games', 'TSP - Better Of 2');
+qs_doc_headline("Who Can Build A Better Tour ? ");
+qs_body_start(true);
+html();
+</SCRIPT>
+
+<body>
+<p>
+This is a two-player game in which players compete to build a better tour than the opponent. Players build a <a href=http://www.tsp.gatech.edu//index.html>traveling salesman tour</a> through the cities/green circles by moving the red or blue 'salesman' circle from city to city. Both players may start their tours at any city, must send their salesmen to visit each city exactly once, and guide their salesmen back to the start of their round trip.
+</p> 
+	
+<center>
+<SCRIPT LANGUAGE="JavaScript">
+var applet = new Applet("tspTwoPlayers", "game.tsp.PlayTwoPlayers.class", "./tsp.jar", 
+                        500, 400); 
+applet.addParam("TRACE", "1"); 
+
+wd(qs_table_start(0, 506)); 
+wd("<TR><TD colspan=2>"); 
+
+   // the applet 
+   wd(qs_colored_table_start(3, undefined, 506) +
+      "<TR><TD>" + 
+         applet.getHtmlString() + 
+      "</TD></TR>" +
+      qs_table_finish()); 
+
+wd("</TD></TR>");
+
+wd(qs_row_spacer()); 
+
+wd("<TR >"); 
+   wd("<TD width=50% align=left valign=top >");
+   // the key info side by side 
+      wd("Click Mouse on Applet area to activate. <br>");
+      wd("Type SPACE to generate a new set of cities.  <br>");
+      wd("Use keys to move and to select cities.");
+      wd("</font>");
+   wd("</td>"); 
+   wd("<td align=right valign=top>"); 
+      wd(qs_colored_table_start(3, qs_page_color) + 
+         "<TR><TD>" + 
+         keys_table() + 
+         "</td></tr>" + 
+         qs_table_finish()); 
+   wd("</td></tr>"); 
+wd(qs_table_finish()); 
+html();
+</SCRIPT>
+</center>
+
+
+
+<p>
+One player controls the red 'salesman' circle, the other the blue one. Players build tours by moving their salesman over cities and selecting them. The table below shows how the "wasd" and arrow keys are used to move the salesman circles up, down, left, and right. Players can add cities to their salesman's tours by typing the back slash or enter key.
+</p>
+
+<p>
+Once the first player has finished with his/her tour, a timer starts off. The second player may continue to work on a tour until the timer stops. If both players complete a tour, the one with the shorter tour wins, otherwise the player with complete tour wins. 
+</p> 
+
+
+
+
+</td> </tr>
+</table>
+</span>
+</p>
+
+<center>
+<p>
+
+</p> 
+</center>
+
+</td></tr></table>
+
+
+</body>
+</html> 

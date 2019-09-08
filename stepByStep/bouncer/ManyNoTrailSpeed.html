@@ -1,0 +1,75 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Start Many Bouncers With Different Speeds', 'ManyNoTrailSpeed');
+</SCRIPT>
+
+<p>
+This final example is a slight variant of the previous one. It sets the debug mode of all actors to <code>true</code> by calling the <code>setDebugMode</code> method. An actor in debug mode changes its direction incrementally, which gives the balloons a more natural look when they bounce off the stage's borders. 
+</p> 
+<p> This example actor differs from the previous in that it assigns different step sizes to the <code>Bouncers</code> that it creates. 
+<code>Bouncers</code> like all 
+<code>Actors</code> in mcmTheater move about the 
+<code>Stage</code> incrementally, step by step. The size of these steps defines each <code>Actor</code>'s speed: the bigger the step size the faster the 
+<code>Actor</code>, see
+<SCRIPT LANGUAGE="JavaScript">
+wd(local_menu_ref('Movement Speed.', 'MCM Basics', 'Movement Speed'));
+html();
+</SCRIPT>
+</p>
+<p>
+
+The initial actor here uses the convenience method
+<code>Dice.throwDouble(0.5, 5.0)</code> which computes a random value 
+bewteen 0.5 and 5.0. 
+Thus
+<code> b.setStepSize(Dice.throwDouble(0.5, 5.0)); </code>
+sets the step size randomly to a value between 0.5 and 5.0. 
+</p> 
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('ManyNoTrailSpeed',
+'public void makeGreenYellow() {\n' + 
+'   Stage stage = getStage();\n' + 
+'   Bouncer b;\n' + 
+'   ImageShape shape;\n' + 
+'   \n' + 
+'   b = new Bouncer();\n' + 
+'   b.jumpTo(Dice.throwPoint(stage));\n' + 
+'   b.setDirection(Dice.throwInt(360));\n' + 
+'   shape = \n' + 
+'      new ImageShape("theaterEx/bouncer/res/green.png",\n' + 
+'                          stage);\n' + 
+'   b.setShape(shape);\n' + 
+'   b.setTrailVisible(false);\n' + 
+'   b.setStepSize(Dice.throwDouble(0.5, 5.0)); \n' + 
+'   b.start(stage);\n' + 
+'   \n' + 
+'   b = new Bouncer();\n' + 
+'   b.jumpTo(Dice.throwPoint(stage));\n' + 
+'   b.setDirection(Dice.throwInt(360));\n' + 
+'   shape = \n' + 
+'      new ImageShape("theaterEx/bouncer/res/yellow.png",\n' + 
+'                          stage);\n' + 
+'   b.setShape(shape);\n' + 
+'   b.setTrailVisible(false);\n' + 
+'   b.setStepSize(Dice.throwDouble(0.5, 5.0)); \n' + 
+'   b.start(stage);\n' + 
+'}');
+html();
+
+local_next(); 
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

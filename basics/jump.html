@@ -1,0 +1,130 @@
+<HTML>
+<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./basics.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+//basics_width = 200; 
+basics_start('Jumping', 'Jumping'); 
+html(); 
+</SCRIPT>
+<p> 
+When <code>Actors</code> use the
+<code>move</code> method to travel on the 
+<code>Stage</code> their movement is performed incrementally and takes time.
+The movement speed can be controlled as is explained in
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_ref_menu_item("Speed.", "MCM Basics", "Speed")); 
+html();
+</SCRIPT>
+But no matter how fast an actor moves movement always takes at least a little time.
+If an <code>Actor</code> wants to cover a distance 
+in literally no time it must use the <code>jump</code> method. 
+Aside from the time issue jumping differs from moving in that it does not leave a trail behind. 
+</p> 
+<SCRIPT LANGUAGE="JavaScript">
+basics_debug = "false";
+
+wd(qs_table_start(0));
+wd(qs_col_spacer(12));
+wd("<TR>"); 
+wd("<TD>"); 
+basics_applet('JumpDist', qs_body_width - 12 - 125, 189);
+wd("</TD>"); 
+wd(qs_col_spacer(12));
+wd("<TD valign=top>"); 
+wd(qs_table_start(0));
+   wd("<TR>");
+   wd("<TD bgcolor=#0000ff>"); 
+      qs_code("dist = 5;", undefined, 125, 24, "#0000ff");
+   wd("</TD>");
+   wd("</TR>");
+   wd("<TR>");
+   wd(qs_row_spacer(6));
+   wd("<TR>");
+   wd("<TD bgcolor=#ffff00>"); 
+      qs_code("dist = 25;", undefined, 125, 24, "#ffff00");
+   wd("</TD>");
+   wd("</TR>");
+   wd(qs_row_spacer(6));
+   wd("<TR>"); 
+   wd("<TD bgcolor=#00ff00>"); 
+   qs_code("dist = 50;", undefined, 125, 24, "#00ff00");
+   wd("</TD>");
+   wd("</TR>");
+   wd(qs_row_spacer(6));
+   wd("<TR>");
+   wd("<TD height=28px bgcolor=#ff0000>"); 
+      qs_code("dist = 100;", undefined, 125, 24, "#ff0000");
+   wd("</TD>");
+   wd("</TR>"); 
+   wd(qs_table_finish()); 
+wd("</TD>"); 
+wd("</TR>"); 
+wd(qs_table_finish()); 
+html();
+</SCRIPT>
+
+<p> 
+The applet above starts a series of <code>Actors</code>:
+The actors with the hollow shapes are <code>JumpMove</code> actors, which alternate between jumping  and moving a given assigned distance. 
+The ones with the solid shapes are <code>MoveDashed</code> actors, which 
+alternate between moving with an invisible and a visible trail.
+The applet assigns a move/jump distance of 5 to the blue actor,
+a distance of 25 to the yellow actor, 
+a distance of 50 to the green actor, and
+a distance of 100 to the blue actor.
+Note how the 
+<code>MoveDashed</code> actor move with a nice steady speed, while the 
+<code>JumpMove</code> actor's speed seems irregular. They are faster though. 
+Both modes of travel have their advantages and disadvantages.
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_table_start(0));
+wd("<TR><TD>"); 
+wd(java_src_ref("simpleShapes/JumpMove.java", "JumpMove"));
+qs_code(
+'public void act() {\n' + 
+'   jump(dist);\n' + 
+'   while (getStage().isInside(getPos())) {\n' + 
+'      move(dist);\n' + 
+'      jump(dist);\n' + 
+'   }\n' + 
+'}',
+undefined, qs_body_width);
+wd("</TD></TR>"); 
+wd("<TR><TD align=left>" + java_src_ref("simpleShapes/JumpMove.java") + 
+   "</TD></TR>"); 
+
+wd(qs_row_spacer(6));
+
+wd("<TR><TD>"); 
+wd(java_src_ref("simpleShapes/MoveDashed.java", "MoveDashed"));
+qs_code(
+'public void act() {\n' + 
+'   while (getStage().isInside(getPos())) {\n' + 
+'      setTrailVisible(false);\n' + 
+'      move(dist);\n' + 
+'      setTrailVisible(true);\n' + 
+'      move(dist);\n' + 
+'   }\n' + 
+'}',
+undefined, qs_body_width);
+
+wd("</TD></TR>"); 
+wd("<TR><TD align=left>" + java_src_ref("simpleShapes/JumpMove.java") + 
+   "</TD></TR>"); 
+wd(qs_table_finish()); 
+
+basics_finish('Sep 2005');
+html();
+</SCRIPT> 
+
+</HTML>
+

@@ -1,0 +1,87 @@
+<HTML>
+<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./basics.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+//basics_width = 200; 
+basics_start('Speed', 'Controlling Movement Speed'); 
+html(); 
+</SCRIPT>
+<p> 
+<code>Actors</code> are programmed to move about the stage. 
+The <code>move</code> method instructs an actor to travel a given number of pixels in its current direction. 
+Movement is performed incrementally in steps whose size is controlled by an <code>Actor's</code> <code>step size</code>. 
+The bigger the <code>step size</code> the faster the movement. 
+</p>
+
+<p>
+The applet below starts a series of 
+<code>Line</code> actors ( 
+<a href=simpleShapes/Line.java>see JavaSource</a>)
+that move on a straight line.
+The actors differ aside from their coloring in their <code>step size</code>. The table under the applet shows the actor's
+<code>setp sizes</code>.
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+basics_debug = "false";
+basics_applet('StepSizes', qs_body_width, 117);
+
+wd("<center>");
+wd(qs_table_start(0));
+wd(qs_row_spacer(6));
+wd("<TR>");
+wd("<TD width=204px height=28px bgcolor=cyan>"); 
+   qs_code("setStepSize(0.5);", undefined, 200, 24, "cyan");
+wd("</TD>");
+wd(qs_col_spacer(12));
+wd("<TD width=204px bgcolor=#00ff00>"); 
+   qs_code("setStepSize(1.0);", undefined, 200, 24, "#00ff00");
+wd("</TD>");
+wd(qs_col_spacer(12));
+wd("<TD width=204px bgcolor=#ffff00>"); 
+   qs_code("setStepSize(2.0);", undefined, 200, 24, "#ffff00");
+wd("</TD>");
+wd("</TR>");
+
+wd(qs_row_spacer(6));
+wd("<TR>");
+//orange
+wd("<TD height=28px bgcolor=#FFA500>"); 
+   qs_code("setStepSize(3.0);", undefined, 200, 24, "#FFA500");
+wd("</TD>");
+wd(qs_col_spacer(12));
+wd("<TD bgcolor=#ff0000>"); 
+   qs_code("setStepSize(5.0);", undefined, 200, 24, "#ff0000");
+wd("</TD>");
+wd("</TR>");
+
+wd(qs_row_spacer(6));
+wd("<TR>");
+wd("<TD height=28px bgcolor=#FF00FF>"); 
+qs_code("setStepSize(10.0);", undefined, 200, 24, "#FF00FF");
+wd("</TD>");
+wd(qs_col_spacer(12));
+wd("<TD bgcolor=#0000ff>"); 
+qs_code("setStepSize(100.0);", undefined, 200, 24, "#0000ff");
+wd("</TD>");
+wd(qs_col_spacer(12));
+wd("<TD bgcolor=#000000>"); 
+   qs_code("setStepSize(1000.0);", undefined, 200, 24, "#000000");
+wd("</TD>");
+wd("</TR>");
+
+wd(qs_table_finish()); 
+wd("</center>");
+
+basics_finish('Sep 2005');
+html();
+</SCRIPT> 
+
+</HTML>

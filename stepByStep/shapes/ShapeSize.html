@@ -1,0 +1,107 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Differently Sized Triangles', 'ShapeSize');
+</SCRIPT>
+
+<p>
+The actors below draw triangles in different sizes.
+The triangle on the left has an edge length of 40 pixels. 
+The edges in the middle are 60 pixels long and on the right they are 90 pixels long. 
+When you compare the 
+<code>shape</code>
+methods of the three actors you see that they differ in the number they pass to their 
+<code>move</code> calls:
+<UL> 
+<LI>The left actor passes 40,</li>
+<LI>the middle 60, and</li>
+<LI> the right the variable <code>size</code> which receives the value 90 when the left actor calls <code>shape(90)</code> in its act method. </LI>
+</UL>
+The  examples  on the following pages continue to use the right actor's <code> shape </code> method in order to draw triangles of various sizes. 
+</p> 
+
+<SCRIPT LANGUAGE="JavaScript">
+applet_width = (qs_body_width - 4 * qs_spacer_dist) /3; 
+applet_height = applet_width; 
+local_debug="true";
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+list_indent(); 
+local_vert_applet('ShapeForever',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      shape();\n' + 
+'   }\n' + 
+'}\n' + 
+'\n' + 
+'public void\n' +
+'shape() {\n' + 
+'   move(40);\n' + 
+'   right(120);\n' + 
+'   move(40);\n' + 
+'   right(120);\n' + 
+'   move(40);\n' + 
+'   right(120);\n' + 
+'}'); 
+list_unindent(); 
+wd("</TD><TD>"); 
+list_indent(); 
+local_vert_applet('ShapeForever60',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      shape();\n' + 
+'   }\n' + 
+'}\n' + 
+'\n' + 
+'public void\n' +
+'shape() {\n' + 
+'   move(60);\n' + 
+'   right(120);\n' + 
+'   move(60);\n' + 
+'   right(120);\n' + 
+'   move(60);\n' + 
+'   right(120);\n' + 
+'}'); 
+list_unindent(); 
+wd("</TD><TD>"); 
+list_indent(); 
+local_vert_applet('ShapeSize',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      shape(90);\n' + 
+'   }\n' + 
+'}\n' + 
+'\n' + 
+'public void\n' +
+'shape(double size) {\n' + 
+'   move(size);\n' + 
+'   right(120);\n' + 
+'   move(size);\n' + 
+'   right(120);\n' + 
+'   move(size);\n' + 
+'   right(120);\n' + 
+'}'); 
+list_unindent(); 
+wd("</TD></TR>");
+
+wd(qs_table_finish()); 
+html();
+</SCRIPT>
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+local_next(); 
+
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

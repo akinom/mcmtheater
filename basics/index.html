@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./basics.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+basics_start(undefined, 'MCM Basics'); 
+html(); 
+</SCRIPT>
+<p>
+Actors form the core of the mcmTheater package.
+They have shapes such as ellipses, circles, rectangles, and squares in colors of their choice.  Bitmap images may also be used as actor shapes. 
+Actors  move about a stage, which is realized by a window on the user's computer screen, an applet as part of a web page, or the whole screen when the program executes as a screensaver. 
+Actors may leave a trail along their movement path. The trail is by default red but can be programmed to be drawn in any color or can even be made invisible. The trail width and movement speed can be varied as well.
+</p> 
+<p>
+The applet below shows a series of square drawing 
+<code>Actors</code>. Every one of them is a 
+<code>CenteredSquare</code> actor
+(see <a href=simpleShapes/CenteredSquare.java>JavaSource</a>). Each actor executes the same code in parallel to the other actors. 
+The applet below simply assigns different properties to them.
+The trail of the four actors on the right is made invisible. 
+The others are programmed to use different trail colors and trail widths.
+The four actors to the left move slower than the rest.
+All actor's except the one in the center show a shape.
+The left and right actor's direction is changed so that they draw their square turned by 45 degrees. 
+Since the middle actor uses no shape its movement becomes invisible after the first square is completed.  
+Its actions become visible again when the applet's initial actor clears the stage. 
+</p>
+<p>
+
+<SCRIPT LANGUAGE="JavaScript">
+basics_debug="false";
+basics_applet("Properties", qs_body_width, 88, undefined, "NoRestart");
+html();
+</SCRIPT> 
+
+<SCRIPT LANGUAGE="JavaScript">
+wd("</p><p>"); 
+wd("To learn how to program actor movement see "); 
+wd(qs_ref_menu_item('Moving', "MCM Basics", "Moving"));
+wd(", ");
+wd(qs_ref_menu_item('Speed', "MCM Basics", "Speed"));
+wd(", ");
+wd(qs_ref_menu_item('Jumping', "MCM Basics", "Jumping"));
+wd(", as well as " + qs_ref_menu_item("Turning", "MCM Basics", "Turning")); 
+wd(".");
+
+wd("To learn how to change an actor's trail color and width see "); 
+wd(qs_ref_menu_item("TrailColor/Width", "MCM Basics", "TrailColor/Width") + "."); 
+wd(qs_ref_menu_item("Shapes", "MCM Basics", "Shapes")); 
+wd(" explains how an actor can change its shape.");
+wd(qs_ref_menu_item("Time", "MCM Basics", "Time")); 
+wd(" explains how to make use of the stage's clock."); 
+
+wd("The " + qs_ref_menu_item("Multiple Actors", "MCM Basics", "Multiple Actors") + 
+   " page"); 
+wd(" contains a few simple actor examples that start other actors.");
+wd("</p> "); 
+wd("<p> "); 
+wd(qs_ref_menu_item("StepByStep", "Step By Step", undefined)); 
+wd("  contains several step by step guides to developing mcmTheater programs"); 
+wd("Check "); 
+wd(qs_ref_menu_item("Gallery", "Gallery", undefined)); 
+wd(" for a collection of mcmTheater program examples."); 
+wd(qs_ref_menu_item("JavaDoc", "JavaDoc", undefined)); 
+wd(" contains the mcmTheater Java API documentation.");
+wd("</p> "); 
+
+basics_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</html> 
+

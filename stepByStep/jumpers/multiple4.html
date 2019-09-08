@@ -1,0 +1,132 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Actors That Jump All Over The Stage', 'multiple4');
+</SCRIPT>
+
+<p> 
+The <a href=single.html>single jumpers</a> page  
+shows various actors that jump all over the stage performing a simple task at random locations. 
+This and the  
+<SCRIPT LANGUAGE="JavaScript">
+local_prev('previous page\'s', 'noPara'); 
+html();
+</SCRIPT>
+initial actors show how to start multiple copies of these actors to execute simultaneoulsy on the stage. Actors are created with different properties such as trail or shape colors or varying kinds of shapes.
+The second actor on this page does not terminate after creating its jumpers but becomes invisible and periodically clears the stage. 
+</p> 
+<p> 
+The links below the applets lead to the complete Java source code of the initial actors as well as the source code of the actors that they create and start.
+</p> 
+
+
+
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+applet_height = 300;
+local_applet_start( 'Four Jumping Circles');
+</SCRIPT>
+<p>
+This initial actor defines a helper method 
+<code>makeJumper</code> which creates a 
+<code>JumpGrowShape</code> actor, sets the new actor's shape 
+to a circle with the given  color and returns a reference to the newly created actor. 
+The initial actor calls 
+<code>makeJumper</code> a total of four times, once to create an actor with a 
+red, a green, a yellow, and a blue shape. 
+The initial actor uses the references to the newly created actors to start them on the stage. 
+The red actor starts immediately. The green actors starts with a delay of 10 ticks on the stage's clock. The yellow 
+actor is 20 clock ticks delayed and the blue actor appears last after 30 clock ticks. 
+</p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet_finish('ListJumpCircles', 
+'public void act() {\n' + 
+'   JumpGrowShape jumper;\n' + 
+'   jumper = makeJumper(Color.RED); \n' + 
+'   jumper.start(getStage());       \n' + 
+'   \n' + 
+'   jumper = makeJumper(Color.GREEN); \n' + 
+'   jumper.start(getStage(), 10);   \n' + 
+'   \n' + 
+'   // ... again for Color.YELLOW and Color.BLUE \n' + 
+'} \n' + 
+'\n' + 
+'JumpGrowShape makeJumper(Color color) {\n' + 
+'   JumpGrowShape jumpActor = new JumpGrowShape();\n' + 
+'   jumpActor.size = getStage().getWidth() / 3;\n' + 
+'   Shape shape = new EllipseShape(5, 5, true); \n' + 
+'   shape.setColor(color);\n' + 
+'   jumpActor.setShape(shape);\n' + 
+'   return jumpActor;\n' + 
+'}', 
+'JumpGrowShape'); 
+
+wd("</TD></TR>"); 
+local_row_spacer();
+local_row_spacer();
+wd("<TR><TD>"); 
+
+applet_height = 400;
+local_applet_start( 'Four Jumping Lines');
+</SCRIPT>
+<p>
+Like the initial actor above a red, a green, a blue, and a yellow actor is created with the help of the locally defined 
+<code>makeJumper</code> method. 
+This 
+<code>makeJumper</code> method unlike the previous one creates a 
+<code>JumpAcross</code> actor, sets the trail color to the given color and 
+assigns a bigger circle shape. All created actors are started without delay. 
+This initial actor does not finish after creating the four line drawing actors. 
+It becomes invisible and clears the stage every 500 clock ticks. 
+</p>
+<SCRIPT LANGUAGE="JavaScript">
+
+local_applet_finish('ListJumpAcross',
+'public void act() {\n' + 
+'   Jump jumper; \n' +
+'   jumper = makeJumper(Color.RED); \n' + 
+'   jumper.start(getStage()); \n' + 
+'   \n' + 
+'   jumper = makeJumper(Color.GREEN); \n' + 
+'   jumper.start(getStage());\n' + 
+'\n' + 
+'   // ... again for Color.YELLOW and Color.BLUE \n' + 
+'\n' + 
+'   setVisible(false);\n' + 
+'   while (true) { // clear stage every 500 clock ticks\n' + 
+'      sleep(500);\n' + 
+'      getStage().clear();\n' + 
+'   }\n' + 
+'} \n' + 
+'\n' + 
+'JumpGrowShape makeJumper(Color color)  {\n' + 
+'   JumpGrowShape jumpActor = new JumpAcross();\n' + 
+'   Shape shape = new EllipseShape(11, 11, true); \n' + 
+'   shape.setColor(color);\n' + 
+'   jumpActor.setShape(shape);\n' + 
+'   jumpActor.setTrailColor(color);\n' + 
+'   return jumpActor;\n' + 
+'}', 
+'JumpAcross'); 
+wd("</TD></TR>");
+wd(qs_table_finish()); 
+html();
+</SCRIPT>
+
+
+<SCRIPT LANGUAGE="JavaScript">
+local_next('See Step By Step Explanation'); 
+
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

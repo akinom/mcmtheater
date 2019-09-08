@@ -1,0 +1,54 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Many Bouncers Without Trails', 'ManyNoTrail');
+</SCRIPT>
+
+<p>
+The applet below is very similar to the previous.
+It still creates 10 yellow and 10 green bouncing ballons. Its sole differenece is that it makes the trail of all <code>Bouncers </code> invisible  instead of assigning a trail color, see the statements:
+<code> b.setTrailVisible(false);</code>. 
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('ManyNoTrail',
+'public void makeGreenYellow() {\n' + 
+'   Stage stage = getStage();\n' + 
+'   Bouncer b;\n' + 
+'   ImageShape shape;\n' + 
+'   \n' + 
+'   b = new Bouncer();\n' + 
+'   b.jumpTo(Dice.throwPoint(stage));\n' + 
+'   b.setDirection(Dice.throwInt(360));\n' + 
+'   shape = \n' + 
+'      new ImageShape("theaterEx/bouncer/res/green.png",\n' + 
+'                          stage);\n' + 
+'   b.setShape(shape);\n' + 
+'   b.setTrailVisible(false);\n' + 
+'   b.start(stage);\n' + 
+'   \n' + 
+'   b = new Bouncer();\n' + 
+'   b.jumpTo(Dice.throwPoint(stage));\n' + 
+'   b.setDirection(Dice.throwInt(360));\n' + 
+'   shape = \n' + 
+'      new ImageShape("theaterEx/bouncer/res/yellow.png",\n' + 
+'                          stage);\n' + 
+'   b.setShape(shape);\n' + 
+'   b.setTrailVisible(false);\n' + 
+'   b.start(stage);\n' + 
+'}');
+html();
+
+local_next(); 
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

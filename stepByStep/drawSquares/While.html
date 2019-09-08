@@ -1,0 +1,58 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Draw The Square Again and Again and ...', 'While');
+</SCRIPT>
+
+<p>
+The first extension is to make the <code>Actor</code> draw the same square 
+over and over again. 
+The 
+<code>while (true)</code> loop wraps the call to the 
+<code>square</code> method. This tells the 
+<code>Actor</code> to call 
+<code>square</code> as long as 
+<code>true</code> is
+<code>true</code>, which of cause will always be the case. 
+</p> 
+
+
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('While',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'     square(80); \n' + 
+'   }\n' + 
+'}'
+);
+html();
+
+wd("<p> ");
+wd("Since it is not very exciting to draw the same square with the same color over and over again, we add a statement to set the trail color to a randomly chosen color before drawing each square: ");
+local_snippet("setTrailColor(Dice.throwColor());");
+wd("</p>"); 
+html();
+
+local_applet('WhileColor',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'     setTrailColor(Dice.throwColor());\n' + 
+'     square(80); \n' + 
+'   }\n' + 
+'}'
+);
+
+local_next(); 
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

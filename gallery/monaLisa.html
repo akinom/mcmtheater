@@ -1,0 +1,42 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+local_pkg = 'collage'
+applet_width = 319;
+applet_height = 440;
+local_start('Mona Lisa Is Losing It', 'Mona Lisa');
+//applet_width = qs_body_width - qs_spacer_dist;
+//applet_height = 400;
+html();
+</SCRIPT>
+
+<p>
+The head moves back and forth, the body stays where it is. 
+The initial actor positions images neatly on stage, the head right above the body. 
+The head is realized by a simple actor that moves back and forth, pausing in the midlle when the head is attached properly.
+</p> 
+
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+local_applet_plain('head.MonaLisa', 
+                    new Array(new Array("STP", 5 ) ));
+wd(local_java_ref('head.MonaLisa'));
+wd('<BR>'); 
+wd(local_java_ref('head.BackForth', 'BackForth'));
+wd("</TD></TR>");
+wd(qs_table_finish()); 
+html();
+</SCRIPT> 
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

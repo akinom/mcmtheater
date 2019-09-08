@@ -1,0 +1,47 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+local_start('A Single Sequence of Growing Shapes', 'Growing Shapes');
+applet_width = qs_body_width - qs_spacer_dist;
+applet_height = 400;
+html();
+</SCRIPT>
+
+<p>
+The initial actor below is a  GrowShapeAndClone actor that the mcmTheater 
+program creates using the default constructor, see definition of 
+<code>GrowShapeAndClone()</code> in the source code. 
+Thus the initial actor below grows its shaps from a minimum size of 10 pixels to a maximum size of 210 pixels. 
+The initial actor creates a clone of itself with the same shape type, and minimum and maximum shape sizes. 
+It starts the clone after 40 clock ticks of starting itself.
+Thus new GrowShapeAndClone actors appear every 40 clock ticks. 
+On average in 4 out of 5 cases clones appear at the same position as the creating actor. 
+In 1 out of 5 cases they jump to a random position on stage. 
+</p> 
+<p> 
+To see a multiple  GrowShapeAndClone actors execute see 
+<a href=growAndClone.html>Multiple</a>. 
+</p>
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+local_applet_plain('GrowShapeAndClone', '');  
+wd(local_java_ref('GrowShapeAndClone'));
+wd("</TD></TR>");
+wd(qs_table_finish()); 
+html();
+</SCRIPT> 
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

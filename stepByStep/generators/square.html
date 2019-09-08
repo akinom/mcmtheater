@@ -1,0 +1,142 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Shooting Lines from the Corners of a Square', 'square');
+</SCRIPT>
+
+<p>
+The two generator actors on this page are based on a square drawing actor. 
+They shoot a 
+<SCRIPT LANGUAGE="JavaScript">
+wd(local_java_ref('OnceAcross', 'OnceAcross'));
+html();
+</SCRIPT>
+actor off  whenever they reach the corner of their squares.
+</p> 
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_table_start(0)); 
+applet_width = 200; 
+applet_height = 90; 
+wd("<TR><TD>"); 
+local_applet_start('The Square Drawing Actor'); 
+local_applet_finish('Square',
+'public void act() {\n' + 
+'   while (true)  { // forever \n' + 
+'      move(30);' + ' left(90);\n' + 
+'   }\n' + 
+'}'
+);
+wd("</TD></TR>");
+
+local_row_spacer();
+local_row_spacer();
+
+applet_height = 200; 
+wd("<TR><TD>"); 
+local_applet_start('Move, Turn, Shoot'); 
+</SCRIPT>
+<p> 
+This initial actor is based on the square drawing actor above. 
+It defines a helper method
+<code>shoot()</code> that creates a 
+<code>OnceAcross</code> actor, sets its direction and position to be the same as its own direction and position and starts the created actor on the stage.
+The initial actor forever 'shoots' a <code>OnceAcross</code> actor off, moves along the side of its square, turns 90 degrees, shoots a new actor, moves along the next side, turns 90 degrees, ..... 
+</p> 
+<SCRIPT LANGUAGE="JavaScript">
+local_applet_finish('RepeaterFromSquareFirst', 
+'public void act() {\n' + 
+'   while (true) { // forever \n' + 
+'      shoot(); ' + 'move(30); ' + 'left(90); \n' + 
+'   }\n' + 
+'}\n' + 
+'\n' + 
+'private void shoot() {\n' + 
+'   OnceAcross across = new OnceAcross();\n' + 
+'   across.setDirection(getDirection());\n' + 
+'   across.jumpTo(getPos());\n' + 
+'   across.start(getStage());\n' + 
+'}'
+); 
+wd("</TD></TR>");
+
+local_row_spacer();
+local_row_spacer();
+
+applet_height = 260; 
+wd("<TR><TD>"); 
+local_applet_start('Move, Turn, Shoot with Shapes'); 
+</SCRIPT>
+<p> 
+This initial actor adds a few statements for beautification purposes. 
+The first two statements in its
+<code>act()</code> method 
+create and assign  a big blue ellipse to the initial actor. 
+The third statements sets the initial actor's trail with to 3 pixels. 
+The <code>shoot</code> contains two additional statements, one sets the 
+new actors shape to a circle shape, the other sets the new actor's trail width to be the same as the initial actor's.
+</p><p>
+Note that the initial actor and the actor it shoots off move together along the square's side to the next corner. The initial actor turns while the 
+<code>OnceAcross</code> actor keeps moving forward. This did not become obvious in the previous version since both actors had the same shape so that the 
+<code>OnceAcross</code> actor's shape completely covered the initial actor's shape. 
+The initial actor's shape is drawn below because 
+the mcmTheater framework draws actors in the order that they started on the stage. Thus older actors, that is the ones that are on stage longer, are drawn 
+under younger actors. 
+</p> 
+<SCRIPT LANGUAGE="JavaScript">
+local_applet_finish('RepeaterFromSquare', 
+'public void act() {\n' + 
+'   setShape(new EllipseShape(21, 21, true)); \n' +
+'   getShape().setColor(Color.BLUE);\n' +
+'   setTrailWidth(3);\n' +
+'   while (true) { // forever \n' + 
+'      shoot(); ' + 'move(30); ' + 'left(90); \n' + 
+'   }\n' + 
+'}\n' + 
+'\n' + 
+'private void shoot() {\n' + 
+'   OnceAcross across = new OnceAcross();\n' + 
+'   across.setShape(new EllipseShape(11, 11, true)); \n' + 
+'   across.setDirection(getDirection());\n' + 
+'   across.jumpTo(getPos());\n' + 
+'   across.setTrailWidth(getTrailWidth());\n' + 
+'   across.start(getStage());\n' + 
+'}'
+); 
+wd("</TD></TR>");
+
+local_row_spacer();
+local_row_spacer();
+
+applet_height = 100; 
+wd("<TR><TD>"); 
+local_applet('OnceAcross', 
+'public void act() {\n' + 
+'   while (getStage().isInside(getPos())) {\n' + 
+'      move(getStepSize());\n' + 
+'   }\n' + 
+'}'
+, '<a name=#onceacross></a> OnceAcross'); 
+wd("</TD></TR>");
+
+wd(qs_table_finish()); 
+html();
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+local_next();
+
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>
+

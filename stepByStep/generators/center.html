@@ -1,0 +1,116 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Shooting Coircles From the Center', 'center');
+</SCRIPT>
+
+<p>
+The generator actors on this stage repeatedly create and start 
+OnceAcross </a> actors. 
+<SCRIPT LANGUAGE="JavaScript">
+wd(local_java_ref('OnceAcross', 'OnceAcross'));
+html();
+</SCRIPT>
+is a very simple actor, which moves on a straight 
+line to the stage's edge and once there finishes its execution,
+see <A href=#onceacross>bottom of page</a>.
+The two generators below are very similar. They run forever repeatedly creating a new <code>OnceAcross</code> actor, setting its movement direction and position to be the same direction and position as their own, starting it on the stage, turning a little bit to the left, and taking a short break before creating the next actor with the new direction. 
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_table_start(0)); 
+applet_width = 200; 
+applet_height = 200; 
+wd("<TR><TD>"); 
+local_applet_start('Create, Start, Turn'); 
+</SCRIPT>
+<p> 
+This initial actor does the minimum necessary: it creates a 
+<code>OnceAcross</code> actor, sets its direction and position, starts it, 
+turns 29 degrees to the left and takes a little 
+<code>sleep</code>ing break. Turning between creating actors is essential since the initial actor uses its own direction, which the
+<code>getDirection()</code> method call returns, to set the created actor's direction using <code>across.setDirection(...)</code>.
+<code>sleep</code>ing is essential to make sure that the created actors get a chance to move before new actors are created.
+Since the initial actor turns 29 degrees which is not a factor of 360 and a prime number it must turn 360 times before it returns to its initial direction. Only then does it 'shoot' actors off in a direction it shot in before. 
+</p> 
+<SCRIPT LANGUAGE="JavaScript">
+local_applet_finish('RepeaterFromCenterFirst', 
+'public void act() {\n' + 
+'   while (true) { // forever \n' + 
+'      OnceAcross across = new OnceAcross(); \n' + 
+'      across.setDirection(getDirection());\n' + 
+'      across.jumpTo(getPos());\n' + 
+'      across.start(getStage());\n' + 
+'      left(29); \n' + 
+'      sleep(6);\n' + 
+'   }\n' + 
+'}'
+); 
+wd("</TD></TR>");
+
+local_row_spacer();
+local_row_spacer();
+
+wd("<TR><TD>"); 
+local_applet_start('Create, Set Shape, Set Invisible Trail, Start, and Turn');
+</SCRIPT>
+<p> 
+This actor adds a few statements for beauties sake. 
+It creates a circle shape that is shared by all actors. 
+The initial actor assigns the shape to itself in its second statement, 
+"<code>setShape(shape);</code>", and uses it for the actors it creates, see  
+"<code>across.setShape(shape);</code>".  
+It sets the trail visibility and step size of the actors it creates so that they do not leave a trail and move relatively slowly. 
+</p> 
+<SCRIPT LANGUAGE="JavaScript">
+local_applet_finish('RepeaterFromCenter',
+'public void act() {\n' + 
+'   Shape shape = new EllipseShape(11, 11, true);\n' + 
+'   setShape(shape);\n' + 
+'   while (true) { // forever \n' + 
+'      OnceAcross across = new OnceAcross(); \n' + 
+'      across.setShape(shape); \n' + 
+'      across.setTrailVisible(false);\n' + 
+'      across.setStepSize(1.0);\n' + 
+'      across.setDirection(getDirection());\n' + 
+'      across.jumpTo(getPos());\n' + 
+'      across.start(getStage());\n' + 
+'      left(29); 	\n' + 
+'      sleep(6);\n' + 
+'   }\n' + 
+'}'
+);
+wd("</TD></TR>");
+
+local_row_spacer();
+local_row_spacer();
+
+applet_height = 100; 
+wd("<TR><TD>"); 
+local_applet('OnceAcross', 
+'public void act() {\n' + 
+'   while (getStage().isInside(getPos())) {\n' + 
+'      move(getStepSize());\n' + 
+'   }\n' + 
+'}'
+, '<a name=#onceacross></a> OnceAcross'); 
+wd("</TD></TR>");
+
+wd(qs_table_finish()); 
+html();
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+local_next();
+
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

@@ -1,0 +1,87 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('A Triangle Snake', 'ShapeMoveClean');
+</SCRIPT>
+
+<p> 
+The actor below alternates between drawing a triangle and moving to one of the triangle's corners thus slowly filling parts of the stage. 
+The <code>shape</code> method finishes drawing each triangle at one of the triangle's corners. 
+The actor randomly chooses one of the other two corners to move to so that the next triangle starts drawing at that corner.
+The call <code>Dice.throwInt(2)</code> behaves like a two sided dice returning either <code>0</code> or <code>1</code>. 
+The actor moves 20 pixels forward if the dice returned 0, thus reaching the triangle's next corner. 
+In the other case it turns 60 degrees to the right before moving 20 pixels which
+transports the actor to the other corner. 
+</p><p>
+Since the actor turns 60 degrees every second round (on average) it should  randomly 'circle' around the center of the stage where it started.  
+On this web page the stage is quite small and the actor spends a considerable amount of time stuck at edge. The second actor below solves that problem. 
+</p> 
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+list_height = 240;
+local_applet('ShapeCleanMove',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      int choice = Dice.throwInt(2); \n' + 
+'      if (choice == 0) {  \n' + 
+'         move(20);\n' + 
+'      } else {\n' + 
+'         right(60);\n' + 
+'         move(20);      \n' + 
+'      }\n' + 
+'      shape(20);\n' + 
+'   }\n' + 
+'}');
+html();
+</SCRIPT>
+</p>
+
+<p> 
+The actor below adds an 
+<code>if</code> statement to the above actor's code. 
+It checks after moving to a corner of the last triangle drawn whether 
+its new position is still inside its stage. 
+If it is not inside (<code>!</code> means not in Java)  it moves 20 pixels backwards returning to its previous position inside the stage. 
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('ShapeCleanMoveInside',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      shape(20);\n' + 
+'      int choice = Dice.throwInt(2); \n' + 
+'      if (choice == 0) {  \n' + 
+'         move(20);\n' + 
+'      } else {\n' + 
+'         right(60);\n' + 
+'         move(20);      \n' + 
+'      }\n' + 
+'      if (! getStage().isInside(getPos())) {\n' + 
+'        move(-20);  \n' + 
+'      }\n' + 
+'   }\n' + 
+'}');
+html(); 
+</SCRIPT>
+</p>
+<p> 
+The above actor is the one used in the next step.
+</P>
+
+<SCRIPT LANGUAGE="JavaScript">
+local_next();
+html();
+
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

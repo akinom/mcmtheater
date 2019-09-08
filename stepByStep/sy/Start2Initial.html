@@ -1,0 +1,45 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./sy.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+sy_start('Example of an Actor that Starts Two Others', 'Start2Initial');
+</SCRIPT>
+<p>
+Now Sy wanted to draw more than one Rectangle at a time. 
+I used this program as a template to show him how an <code>Actor</code> can start other <code>Actors</code>. 
+In this simple case two <code>ShowShape</code> actors are created, positioned, and started on the <code>Stage</code>. 
+The mcmTheater package defines the 
+<code>ShowShape</code> Actor class. It is very simple as one can see 
+below: <code>ShowShape</code> actors simply stay at the location where they are put on <code>Stage</code>. 
+</p> 
+<p> 
+When an <code>Actor</code> starts it appears on the <code>Stage</code>. 
+The position where it appears is defined by x and y coordinates in the 
+<code>Stage</code>'s coordinate system. The <code>Stage</code>'s origin is at the lower left corner of the applet's window. 
+</p> 
+
+<SCRIPT LANGUAGE="JavaScript">
+sy_applet(); 
+sy_code(
+'Actor a;\n' + 
+'\n' +
+'a = new ShowShape();   // create a new ShowShape actor \n' + 
+'a.jumpTo(10, 20);      // force it to go to position (10, 20)\n' + 
+'a.start(getStage());   // tell it to start acting on the stage \n' + 
+'\n' + 
+'a = new ShowShape();   // create a new ShowShape actor \n' + 
+'a.jumpTo(30, 40);      // force it to go to position (30, 40)\n' + 
+'a.start(getStage());   // tell it to start acting on the stage \n' 
+);
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

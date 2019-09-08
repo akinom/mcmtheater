@@ -1,0 +1,58 @@
+<html> 
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+
+<head>
+	<title> Beat the Optimum TSP Game </title>
+</head>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+qs_path = "../.."; 
+qs_doc_start('Games', 'TSP - Optimal');
+qs_doc_headline("Can You Find the Optimal Tour ? ");
+qs_body_start(true);
+html();
+</SCRIPT>
+
+<p>
+The object of this game is to find the shortest possible <a href=http://www.tsp.gatech.edu//index.html>traveling salesman tour</a> through the green cities. The tour may start off at any of the cities, must touch upon each city at least once, and return to the originating city. It is fairly easy to find a good tour. Finding the best possible roundtrip is far less obvious.
+</p> 
+
+<center>
+<SCRIPT LANGUAGE="JavaScript">
+var applet = new Applet("tspOnePlayer", "game.tsp.PlayOnePlayer.class", "./tspres.jar", 
+                        500, 400); 
+applet.addParam("TRACE", "1"); 
+
+wd(qs_colored_table_start(3, undefined, 3) + "<TR><TD>");
+wd (applet.getHtmlString()); 
+wd("</TD></TR>" + qs_table_finish()); 
+html(); 
+</SCRIPT> 
+</center>
+
+<p>
+<ul> 
+<li> Define a traveling salesman tour by clicking your left mouse button on circles. </li>
+<li> Type the letter 'x' to undo your last choice.  </li>
+<li> Type SPACE to start on  a new problem of the same size. </li> 
+<li> Type '+' or '-' to start on  a bigger or smaller problem.</li> 
+<li> Once you define a complete tour you see how your tour compares to the optimal tour. 
+If your tour is the best possible tour in terms of its length, type SPACE to try another problem. In the more likely case that your tour is not optimal you have the following choices:
+<ul> 
+	<li> Type 'o' (for optimal) and the applet shows the optimal tour along with your tour. You can type 'f' to change the display mode or SPACE to return to editing your tour.  </li> 
+	<li> Type 'x' to remove the last city from your tour. This returns the game into editing mode. After removing a few cities and then you can try to build a better tour. 
+	<li> Type SPACE if you want to start over with a new problem </li> 
+</ul>
+
+</ul> 
+</p> 
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_doc_finish("Aug 2006");
+html(); 
+</SCRIPT>
+</html> 
+</body>
+</html> 

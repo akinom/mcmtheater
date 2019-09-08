@@ -1,0 +1,43 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/anim.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+local_start('Spiraling Circle Segments', 'Circle Segments');
+html();
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+var expo = anim_src('gallery/shootLines', 'Shooter', 330);
+
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+wd(expo.html);
+wd(local_java_ref('ShootLines'));
+wd("</TD></TR>");
+wd(qs_table_finish()); 
+
+html();
+do_anim(expo.name, 'gallery/shootLines/Shooter', 0, 330, 150, 900); 
+</SCRIPT>
+</p>
+
+<p>
+The animation above is actually not produced by an applet executing the mcmTheater program.
+It simply displays a series of images.
+Running this program could seriously slow your computer since each circle represents an Actor with is run in its own thread.
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>
+

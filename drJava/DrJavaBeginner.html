@@ -1,0 +1,205 @@
+<HTML> 
+<TITLE> 
+DrJava/mcmTheater Cheat Sheet
+</TITLE> 
+<BODY> 
+<p> 
+Return to <a href=http://www.qsoptsolver.com/mcmTheater>mcmTheater Home</a> 
+</p> 
+
+<h1>Frequently asked questions when working with DrJava </h1> 
+
+<p>
+<H3>Contents</H3>
+<a href=#toolsDialog>
+What to do with the "Locate tools.jar" dialog that DrJava pops up when I start it ? 
+</a>
+<br>
+<A href=#beforeAll>
+Before you do anything you must ... 
+</a>
+<br>
+<a href=#compileAll>
+Compile everything
+</a>
+<br>
+<a href=#getRidInteraction>
+How do I get rid of '//End of Interaction//' in Java files ? 
+</a>
+<br>
+<a href=#replaceSemi>
+How do I replace all '//End of Interaction//' with ';' ? 
+</a>
+<br>
+<a href=#mustSaveDia>
+ What is that "Must Save All Files To Continue" Dialog ?
+</a>
+<br>
+<a href=#editBut>
+ I edited the Java file but my Actor doesn't seem to do the new statements.
+</a>
+<br>
+&nbsp;
+<hr width=100%> 
+
+<a name=toolsDialog>
+<H3> What to do with the "Locate tools.jar" dialog that DrJava pops up when I start it ? </H3> 
+</a>
+
+<p> <img src=img/DrJavaLocateTools.jpg> </p>
+<p>
+DrJava wants to know where tools.jar is located. 
+tools.jar contains the tools that DrJava needs to 
+compile and execute programs. You <b>must</b> 
+tell DrJava where to find it, so <b>click "Yes"</b>. 
+</p> 
+tools.jar is usually located in
+C:\Program Files\Java\jdk....\lib\tools.jar. 
+So navigate to that file, select it, and click "Open". 
+</p>
+
+<A name=beforeAll>
+<H3> Before you do anything you must ... </H3> 
+</a>
+<p> 
+<UL> 
+<LI> 
+<H3> Open your current project </h4>
+All programming files, that I give to you, are part 
+of DrJava projects. Eeach time, that you start DrJava, 
+your first action must be to open 
+the project file that comes with your current program. 
+Project information is stored in files that have a ".pjt"
+extension. All starter projects are stored in 
+mcmUser\drJava\&lt;SomeName&gt;.pjt. 
+</p> 
+<p> 
+To open a project use the "Open" option from the "Project" menu, 
+see <a href=img/DrJavaOpenProject.jpg>DrJava Window</a> </p>
+</p><p>
+<b>Do not</b> use the "Open" short cut button, neither the "Open" option in 
+the File menu. These add a single file to the current project instead of opening
+a complete project with <b>all</b> its file.
+</p> 
+</LI> 
+<LI> 
+
+<a name=compileAll>
+<H3> Compile everything </h4>
+</a>
+<p> 
+Once you successfully opened a project compile everything. You can do that 
+in any of the following three ways: 
+<UL> 
+<LI> Choosing the "Compile All Documents" option from the "Tools" menu, 
+see <a href=img/DrJavaToolsCompileAll.jpg> DrJava Window </a> </LI>
+<LI> Clicking the "Compile All" short cut button. </LI> 
+<LI> Right clicking on the project name in the tree view tab on the left, 
+see <a href=DrJavaProjectCompile.jpg>DrJava Window </a> </LI>
+</LI>
+</UL> 
+</LI> 
+
+<LI> 
+<H3>Test whether you can start your Actor </H3> 
+<p>
+All projects, that I give to you, contain a file called TryStart.hist. 
+All TryMeStart.hist files start an Actor in 
+its own window/Stage. 
+First click on the Interactions Tab at the bottom, right click inside 
+the Interactions tab,and choosee "Execute Interactions History", choose 
+your TryMeStart.hist file,
+see <a href=img/DrJavaTryMeStartExec.jpg>DrJava Window </a>
+</P> 
+
+</P>
+</LI> 
+</UL>
+
+<a name=getRidInteraction>
+<H3> How do I get rid of '//End of Interaction//' in Java files ? </H3> 
+</a>
+<p> 
+This can be done with the help of "Find and Replace" from the "Edit" menu, 
+see <a href=img/DrJavaEditFinidReplace.jpg>DrJava Window</a>.
+</p><p>
+"Find Replace" adds a Tab at the bottom of DrJava's Window, 
+see <a href=img/DrJavaFindReplace.jpg>DrJava Window</a>.
+</p><p>
+Enter '//End of Interaction//' in the 'Find Next" text area on the left 
+and make sure the 'Replace With' area on the right is empty, 
+see <a href=img/DrJavaEditGetRid.jpg>DrJava Window</a>.
+</p><p> 
+Click "Find Next". This find the first occurence of 
+'//End of Interaction//' in the file, that is currently displayed in the 
+edit pane. The Click "Replace/Find Next". This replaces
+'//End of Interaction//' with nothing and finds the next occurence. 
+Repeat "Replace/Find Next" until all have been deleted.
+</p> 
+
+<a name=replaceSemi>
+<H3> How do I replace all '//End of Interaction//' with ';' ? </H3> 
+</a>
+<p> 
+This can be done with the help of "Find and Replace" from the "Edit" menu, 
+see <a href=img/DrJavaEditFinidReplace.jpg>DrJava Window</a>.
+</p><p>
+"Find Replace" adds a Tab at the bottom of DrJava's Window, 
+see <a href=img/DrJavaFindReplace.jpg>DrJava Window</a>.
+</p><p>
+Enter '//End of Interaction//' in the 'Find Next" text area on the left 
+and enter ';' in the 'Replace With' area on the right.
+see <a href=img/DrJavaEditSemicolon.jpg>DrJava Window</a>.
+</p><p> 
+Click "Find Next". This find is the first occurence of 
+'//End of Interaction//' in the file, that is currently displayed in the 
+edit pane. The Click "Replace/Find Next". This replaces
+'//End of Interaction//' with a ';' and finds the next occurence. 
+Repeat "Replace/Find Next" have been replpaced by semicolons.
+</p> 
+
+
+<a name=mustSaveDia>
+<H3> What is that "Must Save All Files To Continue" Dialog ? </H3> 
+</a>
+<p>
+<img src=img/DrJavaMustSaveAll.jpg>
+</p> 
+<p> 
+DrJava must make sure that the compiler 'sees' all changes you made 
+to your files. This dialog appears if you have not saved all your files. 
+This meaans that some editing changes 
+have not been written to the file system and the compiler can therefore 
+not 'see' them. Definetely <b>click "Yes"</b>. It is also OK to choose "Always save before compiling". If you do you will not see this dialog again.
+</p>
+
+
+<a name=editBut>
+<H3> I edited the Java file but my Actor doesn't seem to do the new statements. </H3> 
+</a>
+<p>
+You probably did not compile the edited code. Compile everything
+by doing one of the following:
+<UL> 
+<LI> Choosing the "Compile All Documents" option from the "Tools" menu, 
+see <a href=img/DrJavaToolsCompileAll.jpg> DrJava Window </a> </LI>
+<LI> Clicking the "Compile All" short cut button. </LI> 
+<LI> Right clicking on the project name in the tree view tab on the left, 
+see <a href=DrJavaProjectCompile.jpg>DrJava Window </a> </LI>
+</LI>
+</UL> 
+</P>  
+<p>
+If the compilation prints "Last compilation completed successfully." to 
+the Compiler Ouput Tab 
+(see <a href=img/DrJavaCompileSuccess.jpg>DrJava Window)</a>
+you are fine and should now be able to execute the new statements.
+</p>
+<p>
+If you do see error messages in the Compiler Ouput Tab, 
+(see <a href=img/DrJavaCompileError.jpg>DrJava Window)</a> 
+you need to fix all of them and compile again.  
+</P> 
+
+</BODY> 
+</HTML>

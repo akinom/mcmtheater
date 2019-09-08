@@ -1,0 +1,46 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./sy.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+sy_start('Give the Rectangles Different Colors', 'Start2Colored');
+</SCRIPT>
+
+<p>
+The trail actors leave behind when moving is colored red by default. 
+Sy wanted to change the color of <code>Rectangle's</code> trail colors. 
+We used the <code>Dice.throwColor()</code> method to choose random colors for 
+the two <code>Rectangles</code>. 
+</p> 
+<p> 
+It is interesting to restart this <code>Actor</code>: Because of the radomness in choosing trail colors it behaves slightly different each time it is started.
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+sy_applet('Start2Colored'); 
+sy_code(
+'Actor a;\n' + 
+'\n' + 
+'a = new Rectangle();\n' + 
+'a.setTrailColor(Dice.throwColor());  // assign a random color as trail color\n' + 
+'a.jumpTo(60, 40);\n' + 
+'a.start(getStage());\n' + 
+'\n' + 
+'a = new Rectangle();\n' + 
+'a.setTrailColor(Dice.throwColor());  // assign a random color as trail color\n' + 
+'a.jumpTo(120, 100);\n' + 
+'a.start(getStage());'
+);
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>
+
+

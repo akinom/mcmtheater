@@ -1,0 +1,88 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Start Four Yellow and Four Green Balloons', 'FourGreenYellow');
+</SCRIPT>
+
+<p>
+The applet below starts four yellow and four green <code>Bouncers</code>.  
+The <code>makeGreenYellow</code> method contains the same statements as the <code>act</code> method in the previous example.
+In fact this initial actor came about by copying its code, renaming the <code> act</code> method to <code>makeGreenYellow</code>, editing it slightly,  and writing the <code> act</code> method shown below. 
+</p>
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('FourGreenYellow',
+'public void act() {\n' + 
+'   for (int i = 1; i <= 4; i = i + 1) {\n' + 
+'      makeGreenYellow();\n' + 
+'   }\n' + 
+'}\n' + 
+'      \n' + 
+'public void makeGreenYellow() {\n' + 
+'   Stage stage = getStage();\n' + 
+'   Bouncer b;\n' + 
+'   ImageShape shape;\n' + 
+'   \n' + 
+'   b = new Bouncer();\n' + 
+'   b.jumpTo(Dice.throwPoint(stage));\n' + 
+'   b.setDirection(Dice.throwInt(360));\n' + 
+'   shape = \n' +
+'      new ImageShape("theaterEx/bouncer/res/green.png",\n' + 
+'                          stage);\n' + 
+'   b.setShape(shape);\n' + 
+'   b.setTrailColor(Color.GREEN);\n' + 
+'   b.start(stage);\n' + 
+'   \n' + 
+'   b = new Bouncer();\n' + 
+'   b.jumpTo(Dice.throwPoint(stage));\n' + 
+'   b.setDirection(Dice.throwInt(360));\n' + 
+'   shape = \n' + 
+'      new ImageShape("theaterEx/bouncer/res/yellow.png",\n' + 
+'                          stage);\n' + 
+'   b.setShape(shape);\n' + 
+'   b.setTrailColor(Color.YELLOW);\n' + 
+'   b.start(stage);\n' + 
+'}'
+);
+html();
+</SCRIPT> 
+
+<p> 
+The <code>act</code> method contains a <code>for</code> loop that wraps one statement, a call to <code>makeGreenYellow</code>.
+Each time <code>makeGreenYellow</code> is called, its statements are executed which create a green and a yellow bouncing balloon. 
+Since it is called multiple times 
+<code>makeGreenYellow</code> must avoid creating ballons that start at the same position and head into the same direction which is the reason for changes in the way the bouncers are initialized. 
+In this example they are forced to jump to a random position on stage instead of the stage's center  before they start. The initial actor sets their direction angle randomly as opposed to using 15 or 30 degree angles. 
+</p> 
+
+<p> 
+<code>For</code> loops in general serve to execute something multiple times. 
+The <code>for</code> loop in this example states that the 
+<code>makeGreenYellow</code> method call must be repeated  4 times. 
+
+The variable <code>i</code> is set to 1 when the loop starts, and its value is increased by one for each repetition.
+
+The loop finishes once <code>i</code> becomes bigger than 4. 
+
+Thus the loop executes 4 times, once with the variable <code>i</code> set to 1, once with <code>i</code> set to 2, once with <code>i</code> set to 3,  and a last time with <code>i</code> set to 4.  
+
+In this simple loop 
+<code>i</code> serves as a counter only whose value is used to make sure that 
+<code>makeGreenYellow</code> is in fact called exactly 4 times. 
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+local_next(); 
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

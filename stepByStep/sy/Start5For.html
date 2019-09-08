@@ -1,0 +1,48 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./sy.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+sy_start('Do The Same with a For Loop', 'Start5For');
+</SCRIPT>
+
+<p>
+Sy was done and happy with his results.
+The Actor in this final version performs the exact same actions as Sy's last actor.
+It does it more elegantly with the help of a <code>for</code> loop and is shown here simply for completeness. 
+</p> 
+<SCRIPT LANGUAGE="JavaScript">
+sy_applet();
+sy_code(
+'Actor a;\n' + 
+'Shape shape = new EllipseShape(11, 11, true); \n' + 
+'shape.setColor(Color.BLUE); \n' + 
+'\n' + 
+'double x = 60;\n' + 
+'double y = 40;\n' + 
+'for (int i = 0; i < 5; i = i + 1) {\n' + 
+'   a = new Rectangle(); \n' + 
+'   a.setShape(shape); \n' + 
+'   a.setTrailColor(Dice.throwColor());\n' + 
+'   a.setTrailWidth(3); \n' + 
+'   a.jumpTo(x, y);\n' + 
+'   a.start(getStage()); \n' + 
+'   // the Actor must jump to a position that is: \n' + 
+'   //     100 pixels further to the right and \n' + 
+'   //     50 pixels further up\n' + 
+'   x = x + 60; \n' + 
+'   y = y + 60;		\n' + 
+'}'
+);
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>
+

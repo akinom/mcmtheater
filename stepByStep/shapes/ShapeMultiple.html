@@ -1,0 +1,84 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Multiple Triangles', 'ShapeMultiple');
+</SCRIPT>
+
+<p>
+Drawing the same triangle at the same position over and over again is not all that exciting.
+To make the drawn shapes more exciting we can 
+draw differently sized triangles, rotate the triangles, and draw them at different positions.  
+<p>
+</p> 
+The actors below use the previously defined shape method to draw multiple triangles.
+The first draws differently sized triangles, the second rotates the triangles around a center, and the third draws triangles at randomly chosen positions. 
+</p> 
+<p> 
+The 
+<SCRIPT LANGUAGE="JavaScript">
+local_next("next page", 'noParagraph');
+html();
+</SCRIPT>
+shows actors that combine differently sized rotated triangles into more sophisticated patterns.
+Actors that draw a series of triangles along a line can be seen at
+<a href=ShapeLine.html>Sliding Traingles</a>. 
+Actors that randomly jump or move around the stage to fill it with triangles are shown at <a href=ShapeJump.html>Jumping Triangles</a>. 
+</p> 
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('ShapeSize3',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      shape(30);\n' + 
+'      shape(60);\n' + 
+'      shape(90);\n' + 
+'   }\n' + 
+'}');
+html();
+</SCRIPT>
+</p>
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('ShapeRotate',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      shape(40);\n' + 
+'      right(90);\n' + 
+'   }\n' + 
+'}');
+html(); 
+</SCRIPT>
+</p>
+
+
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('ShapeJumpRandom',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      jumpTo(Dice.throwPoint(getStage()));\n' + 
+'      shape(40);\n' + 
+'   }\n' + 
+'}');
+html(); 
+</SCRIPT>
+</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+local_next(); 
+
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

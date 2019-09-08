@@ -1,0 +1,66 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Draw a Square ONCE', 'Square');
+</SCRIPT>
+
+<p>
+The first step in transforming the square drawing actor is to undertand it. 
+It simply calls the <code>square</code> method 
+once in its <code>act</code> method which it executes as soon at it enters the 
+<code>Stage</code>. In this case that means as soon as it shows up in the 
+applet's window below.
+Every occurance of the variable <code>size</code>
+in the <code>square</code> method is replaced by the number <code>50</code> when it is executed. 
+Therefore <code>square(50);</code> moves 4 times <code>50</code> pixels
+forward following each move by a 90 degree turn to the right.
+</p>
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('Square',
+'public void act() {\n' + 
+'   square(50); \n' + 
+'}\n' + 
+'\n' + 
+'public void square(double size) {\n' + 
+'   // do the statements in the for loop 4 times\n' + 
+'   for (int i = 0; i < 4; i = i + 1) {\n' + 
+'      move(size);\n' + 
+'      right(90);\n' + 
+'   }\n' + 
+'}');
+html();
+
+wd("<p> ");
+wd("To draw a square with an 80 pixels side length one must replace the call ");
+local_replace("square(50);", "by", "square(80);"); 
+wd("</p>"); 
+html();
+
+local_applet('Bigger',
+'public void act() {\n' + 
+'   square(80); \n' + 
+'}\n' + 
+'\n' + 
+'public void square(double size) {\n' + 
+'   // do the statements in the for loop 4 times\n' + 
+'   for (int i = 0; i < 4; i = i + 1) {\n' + 
+'      move(size);\n' + 
+'      right(90);\n' + 
+'   }\n' + 
+'}');
+
+local_next(); 
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

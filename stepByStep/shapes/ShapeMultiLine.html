@@ -1,0 +1,93 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Sliding Triangles Along a Line', 'ShapeMultiLine');
+</SCRIPT>
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+wd("The initial actor below starts three copies of the ");
+wd(local_java_ref('ShapeCtrLineJump', 'ShapeCtrLineJump') ); 
+wd(' actor which is the last actor described on the '); 
+local_prev("previous page.", 'NoParagraph'); 
+html(); 
+</SCRIPT>
+It creates the three actors by calling <code>makeShapeLine</code> three times passing the color and direction that the new actor should use. 
+</p> 
+<p>
+<code>makeShapeLine</code>  creates a new <code>ShapeCtrLineJump</code> actor and assigns a reference to this new actor to the variable <code>actor</code>. 
+It then sets the new actor's direction to the given <code>angle</code> and its trail color to the given <code>color</code>. 
+It makes sure the actor is invisible, meaning that the actor will not show a shape. It assigns 100 as the new actor's step size, which makes its movement real fast, and it gives the actor a 2 pixel trail width.
+It finally starts the newly created actor on the stage. 
+Note that to do all this all method calls in <code>makeShapeLine</code> are preceeded by <code>actor.</code> which is necessary to make explicit that the new <code>actor's</code> direction, visibility, ... is to be changed not the initial actor's direction, visibility, ...
+
+
+</p> 
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+applet_height = 240; 
+local_applet('ShapeCtrLineMCG',
+'public void act() {\n' + 
+'   makeShapeLine(45, Color.CYAN);\n' + 
+'   makeShapeLine(45, Color.GREEN);\n' + 
+'   makeShapeLine(135, Color.MAGENTA);\n' + 
+'}\n' + 
+'   \n' + 
+'void makeShapeLine(int angle, Color color) {\n' + 
+'   Actor actor = new ShapeCtrLineJump();\n' + 
+'   actor.setDirection(angle);\n' + 
+'   actor.setTrailColor(color);\n' + 
+'   actor.setVisible(false);\n' + 
+'   actor.setStepSize(100);\n' + 
+'   actor.setTrailWidth(2);\n' + 
+'   actor.start(getStage());\n' + 
+'}');
+html();
+</SCRIPT>
+</p>
+
+<p> 
+The actor below clears the stage periodically. 
+It adds a few statements to alternate between  sleeping for 300 ticks on the stage's clock and clearing the stage. 
+Now that the initial actor continues the execution of its act method indefinitely it is made invisible. 
+</p> 
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+list_height = 240; 
+local_applet('ShapeCtrLineClear',
+'public void act() {\n' + 
+'   makeShapeLine(45, Color.CYAN);\n' + 
+'   makeShapeLine(45, Color.GREEN);\n' + 
+'   makeShapeLine(135, Color.MAGENTA);\n' + 
+'\n' + 
+'   setVisible(false);\n' + 
+'   while(true) {\n' + 
+'      sleep(300); \n' + 
+'      getStage().clear();\n' + 
+'   }\n' + 
+'}\n' + 
+'\n' + 
+'void makeShapeLine(int angle, Color color) {\n' + 
+'   // ... as above \n'  + 
+'}');
+html();
+</SCRIPT>
+</p> 
+
+<SCRIPT LANGUAGE="JavaScript">
+
+local_next(); 
+
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

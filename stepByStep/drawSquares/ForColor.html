@@ -1,0 +1,38 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_debug = "false";
+local_start('Every Square Gets Its Own Color', 'ForColor'); 
+</SCRIPT>
+
+<p>
+Every square is drawn in its own randomly chosen color 
+if the <code>setTrailColor</code> statement is moved inside the <code>for</code> loop right before the <code>Actor</code> calls the <code>square</code> method:
+</p>
+<SCRIPT LANGUAGE="JavaScript">
+local_applet('ForColor',
+'public void act() {\n' + 
+'   while (true) {\n' + 
+'      for (double len = 10; len <= 80; len = len + 10) {\n' +
+'         setTrailColor(Dice.throwColor());\n' +
+'         square(len); right(180);\n' +
+'      }\n' +
+'   }\n' +
+'}'
+);
+html();
+
+local_next(); 
+
+qs_doc_finish("Sep 2005");
+html(); 
+</SCRIPT>
+</HTML>

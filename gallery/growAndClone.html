@@ -1,0 +1,51 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+local_start('Growing Shapes', 'Growing Shapes');
+applet_width = qs_body_width - qs_spacer_dist;
+applet_height = 400;
+html();
+</SCRIPT>
+
+<p>
+The initial actor below starts six  GrowShapeAndClone, 
+<SCRIPT LANGUAGE="JavaScript">
+wd("(see " + local_java_ref('GrowShapeAndClone', 'GrowShapeAndClone') + ")");
+html();
+</SCRIPT>
+Actors. 
+It chooses a short start delay randomly to avoid that the actors perform in lock step. 
+The initial actor, when creating them, sets their minimum shape size to  10 pixels, their maximum size to  a third of the average of the stage's width and height.
+Half the actors are started with a square, the other half with a circle shape. 
+The time delay that the GrowShapeAndClone actors use to clone themselves is set so that an actor's clone appears on stage when the actor itself has grown about a fifth of the total growth it goes through. 
+GrowShapeAndClone actors decide randomly whether to position their clone at their own position (4 out of 5 times on average) or a random position on stage (1 out of 5 times).
+</p> 
+<p> 
+To see a single GrowShapeAndClone actor execute see 
+<a href=growAndCloneSingle.html>Single</a>. 
+</p>
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+local_applet_plain('GrowShapeCloneStarter', ''); 
+wd(local_java_ref('GrowShapeCloneStarter'));
+wd("<BR>"); 
+wd(local_java_ref('GrowShapeAndClone', 'GrowShapeAndClone'));
+wd("</TD></TR>");
+wd(qs_table_finish()); 
+html();
+</SCRIPT> 
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

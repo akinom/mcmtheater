@@ -1,0 +1,67 @@
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../list.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./local.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = "../.."; 
+local_start('Populating the Stage with Lots of Actors', 'index');
+</SCRIPT>
+
+<p>
+The following pages explain how an initial actor can generate other actors to execute simultaneously on the stage. 
+The generators in these pages start actors that perform extremely simple tasks, such as drawing a line along a straight path taken to the stage's edge. 
+</p>
+
+<p>
+<SCRIPT LANGUAGE="JavaScript">
+applet_width = (qs_body_width - 3 * qs_spacer_dist) /2; 
+wd(qs_table_start(0)); 
+wd("<TR><TD>"); 
+local_indent(); 
+local_applet_plain('RepeaterFromCenter'); 
+local_ref('Shoot from Center', 'center.html'); 
+local_unindent(); 
+wd("</TD><TD>"); 
+local_indent(); 
+local_applet_plain('RepeaterFromSquare'); 
+local_ref('Shoot from Square', 'square.html'); 
+local_unindent(); 
+wd("</TD></TR>");
+
+wd(qs_table_finish()); 
+html();
+</SCRIPT>
+</p> 
+
+<p> 
+<SCRIPT LANGUAGE="JavaScript">
+wd("Proceed to the "); local_next("next page", 'noPara'); 
+wd("for a detailed explanation of the generators above.");
+html(); 
+</SCRIPT>
+</p> 
+<p> 
+The following links lead to more examples of generator actors:
+<a href=../../basics/multiple.html> Basics &gt;  Multiple Actors,</a> &nbsp;
+<a href=../shapes/ShapeMultiLine.html> Three Triangle Lines,</a> &nbsp;
+<a href=../bouncer/ManyNoTrailSpeed.html> Many Bouncing Balloons,</a> &nbsp;
+<a href=../sy/Start5.html>Five Rectangles</a>  &nbsp;
+<a href=../jumpers/multiple20.html> Twenty Jumper Actors,</a>  &nbsp;
+<a href=../jumpers/multiple4.html> Four Actors in Primary Colors,</a> &nbsp;
+<a href=../shapes/ListShapeMoveClean.html> A Red, Green, and Blue Triangle Snake</a>  &nbsp;
+<a href=../shapes/ShapeMultiLine.html> Three Triangle Lines,</a> &nbsp;
+<a href=../bouncer/ManyNoTrailSpeed.html> Many Bouncing Balloons,</a> or
+<a href=../sy/Start5.html>Five Rectangles</a>.
+</p>
+
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_doc_finish("Oct 2005");
+html(); 
+</SCRIPT>
+</HTML>

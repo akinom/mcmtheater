@@ -1,0 +1,85 @@
+<HTML>
+<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+<meta name="Keywords" content="Java Turtle Middle School High School Computer Programming">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js/index.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="./basics.js">
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+qs_path = ".."; 
+basics_width = 120; 
+basics_start('Shapes', 'Changing an Actor\'s Shape'); 
+html(); 
+</SCRIPT>
+
+<p>
+Actors that move about the stage are represented by their shapes. By default actors are shown as a circle containing a line that points in the actor's current movement direction. Actors can be programmed to take on other shapes, such as filled or hollow circles, ellipses, squares, rectangles, or even any bitmap that can be read from a file. All standard file format such as JPG, GIF, PNG are accepted, which makes it easy to use photos, images downloaded from the internet or cutouts from them. 
+</P>
+<p> 
+The applets below show the effects of the shape changing statements shown to their right.</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+basics_width = 129;
+wd(qs_table_start(0));
+basics_img_lesson( 'ShapeSetSize30_30', 60, 
+		'setSize(30, 30);', 
+		'Default shape resized to 30 by 30  pixels'); 
+basics_img_lesson('ShapeSetSize15_30', 60, 
+		'setSize(15, 30);', 
+		'Default shape resized to 15 pixels width and 30 pixels height'); 
+basics_img_lesson('ShapeSetEllipseHollow', 60, 
+	'setShape(new EllipseShape(100, 20, false));',
+	'Assign a hollow ellipse shape 100 pixels wide and 20 pixels high');
+basics_img_lesson('ShapeSetEllipseSolid', 60,  
+	'setShape(new EllipseShape(100, 20, true));',
+	'Assign a solid ellipse shape 100 pixels wide and 20 pixels high');
+basics_img_lesson('ShapeSetRectangleSolid', 60, 
+	'setShape(new RectangleShape(100, 20, true));',
+	'Assign a solid rectangle shape 100 pixels wide and 20 pixels high');
+basics_img_lesson('ShapeSetRectangleHollow', 60, 
+	'setShape(new RectangleShape(100, 20, false));',
+	'Assign a hollow rectangle shape 100 pixels wide and 20 pixels high');
+basics_img_lesson('ShapeSetRectangleHollowThick', 60, 
+	'setShape(new RectangleShape(100, 20, false));\n' + 
+	'setLineWidth(5);',
+	'Assign a hollow rectangle shape 100 pixels wide and 20 pixels high;' +
+	'&nbsp;' + 
+	'Set the shape\'s line width to 5 pixels');
+basics_img_lesson('ShapeSetColor', 60, 
+	'setShape(new RectangleShape(20, 25, true));\n' + 
+	'setColor(Color.BLUE);',
+	'Assign a solid rectangle shape 20 pixels wide and 25 pixels high;' +
+	'&nbsp;' + 
+	'Set the shape\'s color to BLUE');
+basics_img_lesson('ShapeSetColorHollow', 60, 
+	'setShape(new RectangleShape(20, 25, false));\n' + 
+	'setColor(Color.BLUE);',
+	'Assign a hollow rectangle shape 20 pixels wide and 25 pixels high;' +
+	'&nbsp;' + 
+	'Set the shape\'s color to BLUE');
+basics_img_lesson('ShapeSetTriangleHollow', 60, 
+	'setShape(new TriangleShape(60, 40, false));\n' + 
+        'setLineWidth(3);', 
+	'Assign a hollow triangular shape 60 pixels wide and 40 pixels high;' +
+	'&nbsp;' + 
+	'Set the shape\'s linewidth to 3');
+basics_img_lesson('ShapeSetImage', 60, 
+'setShape(new ImageShape("simpleShapes/res/butterfly.png", \n' + 
+'                        getStage()));',
+	'Assign the image in file <a href=simpleShapes/res/butterfly.png> simpleShapes/res/butterfly.png (<img border=0px width=14px src=simpleShapes/res/butterfly.png>)</a> as shape'); 
+
+wd(qs_table_finish());
+
+html();
+</SCRIPT> 
+
+<SCRIPT LANGUAGE="JavaScript">
+basics_finish('Sep 2005');
+html();
+</SCRIPT> 
+
+</HTML>
+
